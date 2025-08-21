@@ -1,8 +1,7 @@
-// app/layout.tsx
+import ThemeRegistry from "@/lib/mui/themeRegistry";
 import { Metadata } from "next";
 import { Roboto } from "next/font/google";
-import "./globals.css";
-import ThemeRegistry from "./themeRegistry";
+import "../styles/globals.css";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -11,8 +10,8 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Wonderland",
-  description: "Wonderland dApp.",
+  title: "My MUI App",
+  description: "Clean dark layout",
 };
 
 export default function RootLayout({
