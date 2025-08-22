@@ -1,7 +1,7 @@
 import ThemeRegistry from "@/lib/mui/themeRegistry";
+import { RainbowProvider } from "@/lib/walletConnection/providers";
 import { Metadata } from "next";
 import { Roboto } from "next/font/google";
-import "../styles/globals.css";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -10,8 +10,8 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "My MUI App",
-  description: "Clean dark layout",
+  title: "Wonderland",
+  description: "Wonderland challenge",
 };
 
 export default function RootLayout({
@@ -22,7 +22,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={roboto.className}>
-        <ThemeRegistry>{children}</ThemeRegistry>
+        <RainbowProvider>
+          <ThemeRegistry>{children}</ThemeRegistry>
+        </RainbowProvider>
       </body>
     </html>
   );
