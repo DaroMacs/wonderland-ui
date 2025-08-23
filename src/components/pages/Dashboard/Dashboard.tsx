@@ -1,5 +1,17 @@
+import { Box, Typography } from "@mui/material";
+
 const Dashboard = () => {
-  return <div>Dashboard</div>;
+  return (
+    <Box>
+      <Typography variant="h2" gutterBottom>
+        Dashboard
+      </Typography>
+      <Typography>
+        Welcome to your dashboard! This is where you can manage your account and
+        view your data.
+      </Typography>
+    </Box>
+  );
 };
 
 export default Dashboard;

@@ -3,7 +3,7 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 const Login = () => {
   return (
-    <Box sx={{ p: 4 }}>
+    <Box>
       <Typography variant="h2" gutterBottom>
         Wallet Connection
       </Typography>

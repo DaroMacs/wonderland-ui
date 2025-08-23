@@ -1,6 +1,4 @@
-import ThemeRegistry from "@/lib/mui/themeRegistry";
-import { RainbowProvider } from "@/lib/walletConnection/providers";
-import Starfield from "@/styles/Starfield/Starfield";
+import AppWrapper from "@/components/elements/AppWrapper";
 import { Metadata } from "next";
 import { Roboto } from "next/font/google";
 
@@ -30,15 +28,7 @@ export default function RootLayout({
           minHeight: "100vh",
         }}
       >
-        <Starfield
-          speedFactor={0.03}
-          backgroundColor="black"
-          starColor={[255, 255, 255]}
-          starCount={5000}
-        />
-        <RainbowProvider>
-          <ThemeRegistry>{children}</ThemeRegistry>
-        </RainbowProvider>
+        <AppWrapper>{children}</AppWrapper>
       </body>
     </html>
   );
