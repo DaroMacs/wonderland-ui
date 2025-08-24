@@ -1,73 +1,376 @@
 "use client";
 
-import { LOGIN } from "@/constants/routes";
-import { Logout } from "@mui/icons-material";
-import { Box, Button, Chip, Typography } from "@mui/material";
-import { useRouter } from "next/navigation";
-import { useAccount, useDisconnect } from "wagmi";
+import { FloatingNavbar } from "@/components/ui/FloatingNavbar";
+import { Box, Typography } from "@mui/material";
 
 const Profile = () => {
-  const { disconnect } = useDisconnect();
-  const { address } = useAccount();
-  const router = useRouter();
-
-  const handleLogout = () => {
-    disconnect();
-    router.push(LOGIN);
-  };
-
   return (
     <Box>
+      <FloatingNavbar />
+
       <Box
         sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          mb: 3,
+          marginTop: "100px",
         }}
       >
-        <Box>
-          <Typography variant="h2" gutterBottom>
-            Profile
-          </Typography>
-          {address && (
-            <Chip
-              label={`${address.slice(0, 6)}...${address.slice(-4)}`}
-              variant="outlined"
-              sx={{
-                borderColor: "#06b6d4",
-                color: "#06b6d4",
-                fontSize: "0.875rem",
-                "& .MuiChip-label": {
-                  fontFamily: "monospace",
-                },
-              }}
-            />
-          )}
-        </Box>
-        <Button
-          variant="outlined"
-          color="error"
-          startIcon={<Logout />}
-          onClick={handleLogout}
+        <Typography
+          variant="h4"
+          gutterBottom
+          sx={{ color: "white", fontWeight: 600 }}
+        >
+          Welcome to your profile!
+        </Typography>
+        <Typography
           sx={{
-            borderRadius: "20px",
-            textTransform: "none",
-            borderColor: "#ef4444",
-            color: "#ef4444",
-            "&:hover": {
-              borderColor: "#dc2626",
-              backgroundColor: "#dc262610",
-            },
+            color: "rgba(255, 255, 255, 0.8)",
+            fontSize: "1.1rem",
+            lineHeight: 1.6,
           }}
         >
-          Logout
-        </Button>
+          This is where you can manage your account and view your data. Your
+          wallet information is displayed in the floating navbar above.
+        </Typography>
+        <Typography
+          sx={{
+            color: "rgba(255, 255, 255, 0.8)",
+            fontSize: "1.1rem",
+            lineHeight: 1.6,
+          }}
+        >
+          This is where you can manage your account and view your data. Your
+          wallet information is displayed in the floating navbar above.
+        </Typography>
+        <Typography
+          sx={{
+            color: "rgba(255, 255, 255, 0.8)",
+            fontSize: "1.1rem",
+            lineHeight: 1.6,
+          }}
+        >
+          This is where you can manage your account and view your data. Your
+          wallet information is displayed in the floating navbar above.
+        </Typography>
+        <Typography
+          sx={{
+            color: "rgba(255, 255, 255, 0.8)",
+            fontSize: "1.1rem",
+            lineHeight: 1.6,
+          }}
+        >
+          This is where you can manage your account and view your data. Your
+          wallet information is displayed in the floating navbar above.
+        </Typography>
+        <Typography
+          sx={{
+            color: "rgba(255, 255, 255, 0.8)",
+            fontSize: "1.1rem",
+            lineHeight: 1.6,
+          }}
+        >
+          This is where you can manage your account and view your data. Your
+          wallet information is displayed in the floating navbar above.
+        </Typography>
+        <Typography
+          sx={{
+            color: "rgba(255, 255, 255, 0.8)",
+            fontSize: "1.1rem",
+            lineHeight: 1.6,
+          }}
+        >
+          This is where you can manage your account and view your data. Your
+          wallet information is displayed in the floating navbar above.
+        </Typography>
+        <Typography
+          sx={{
+            color: "rgba(255, 255, 255, 0.8)",
+            fontSize: "1.1rem",
+            lineHeight: 1.6,
+          }}
+        >
+          This is where you can manage your account and view your data. Your
+          wallet information is displayed in the floating navbar above.
+        </Typography>
+        <Typography
+          sx={{
+            color: "rgba(255, 255, 255, 0.8)",
+            fontSize: "1.1rem",
+            lineHeight: 1.6,
+          }}
+        >
+          This is where you can manage your account and view your data. Your
+          wallet information is displayed in the floating navbar above.
+        </Typography>
+        <Typography
+          sx={{
+            color: "rgba(255, 255, 255, 0.8)",
+            fontSize: "1.1rem",
+            lineHeight: 1.6,
+          }}
+        >
+          This is where you can manage your account and view your data. Your
+          wallet information is displayed in the floating navbar above.
+        </Typography>
+        <Typography
+          sx={{
+            color: "rgba(255, 255, 255, 0.8)",
+            fontSize: "1.1rem",
+            lineHeight: 1.6,
+          }}
+        >
+          This is where you can manage your account and view your data. Your
+          wallet information is displayed in the floating navbar above.
+        </Typography>
+        <Typography
+          sx={{
+            color: "rgba(255, 255, 255, 0.8)",
+            fontSize: "1.1rem",
+            lineHeight: 1.6,
+          }}
+        >
+          This is where you can manage your account and view your data. Your
+          wallet information is displayed in the floating navbar above.
+        </Typography>
+        <Typography
+          sx={{
+            color: "rgba(255, 255, 255, 0.8)",
+            fontSize: "1.1rem",
+            lineHeight: 1.6,
+          }}
+        >
+          This is where you can manage your account and view your data. Your
+          wallet information is displayed in the floating navbar above.
+        </Typography>
+        <Typography
+          sx={{
+            color: "rgba(255, 255, 255, 0.8)",
+            fontSize: "1.1rem",
+            lineHeight: 1.6,
+          }}
+        >
+          This is where you can manage your account and view your data. Your
+          wallet information is displayed in the floating navbar above.
+        </Typography>
+        <Typography
+          sx={{
+            color: "rgba(255, 255, 255, 0.8)",
+            fontSize: "1.1rem",
+            lineHeight: 1.6,
+          }}
+        >
+          This is where you can manage your account and view your data. Your
+          wallet information is displayed in the floating navbar above.
+        </Typography>
+        <Typography
+          sx={{
+            color: "rgba(255, 255, 255, 0.8)",
+            fontSize: "1.1rem",
+            lineHeight: 1.6,
+          }}
+        >
+          This is where you can manage your account and view your data. Your
+          wallet information is displayed in the floating navbar above.
+        </Typography>
+        <Typography
+          sx={{
+            color: "rgba(255, 255, 255, 0.8)",
+            fontSize: "1.1rem",
+            lineHeight: 1.6,
+          }}
+        >
+          This is where you can manage your account and view your data. Your
+          wallet information is displayed in the floating navbar above.
+        </Typography>
+        <Typography
+          sx={{
+            color: "rgba(255, 255, 255, 0.8)",
+            fontSize: "1.1rem",
+            lineHeight: 1.6,
+          }}
+        >
+          This is where you can manage your account and view your data. Your
+          wallet information is displayed in the floating navbar above.
+        </Typography>
+        <Typography
+          sx={{
+            color: "rgba(255, 255, 255, 0.8)",
+            fontSize: "1.1rem",
+            lineHeight: 1.6,
+          }}
+        >
+          This is where you can manage your account and view your data. Your
+          wallet information is displayed in the floating navbar above.
+        </Typography>
+        <Typography
+          sx={{
+            color: "rgba(255, 255, 255, 0.8)",
+            fontSize: "1.1rem",
+            lineHeight: 1.6,
+          }}
+        >
+          This is where you can manage your account and view your data. Your
+          wallet information is displayed in the floating navbar above.
+        </Typography>
+        <Typography
+          sx={{
+            color: "rgba(255, 255, 255, 0.8)",
+            fontSize: "1.1rem",
+            lineHeight: 1.6,
+          }}
+        >
+          This is where you can manage your account and view your data. Your
+          wallet information is displayed in the floating navbar above.
+        </Typography>
+        <Typography
+          sx={{
+            color: "rgba(255, 255, 255, 0.8)",
+            fontSize: "1.1rem",
+            lineHeight: 1.6,
+          }}
+        >
+          This is where you can manage your account and view your data. Your
+          wallet information is displayed in the floating navbar above.
+        </Typography>
+        <Typography
+          sx={{
+            color: "rgba(255, 255, 255, 0.8)",
+            fontSize: "1.1rem",
+            lineHeight: 1.6,
+          }}
+        >
+          This is where you can manage your account and view your data. Your
+          wallet information is displayed in the floating navbar above.
+        </Typography>
+        <Typography
+          sx={{
+            color: "rgba(255, 255, 255, 0.8)",
+            fontSize: "1.1rem",
+            lineHeight: 1.6,
+          }}
+        >
+          This is where you can manage your account and view your data. Your
+          wallet information is displayed in the floating navbar above.
+        </Typography>
+        <Typography
+          sx={{
+            color: "rgba(255, 255, 255, 0.8)",
+            fontSize: "1.1rem",
+            lineHeight: 1.6,
+          }}
+        >
+          This is where you can manage your account and view your data. Your
+          wallet information is displayed in the floating navbar above.
+        </Typography>
+        <Typography
+          sx={{
+            color: "rgba(255, 255, 255, 0.8)",
+            fontSize: "1.1rem",
+            lineHeight: 1.6,
+          }}
+        >
+          This is where you can manage your account and view your data. Your
+          wallet information is displayed in the floating navbar above.
+        </Typography>
+        <Typography
+          sx={{
+            color: "rgba(255, 255, 255, 0.8)",
+            fontSize: "1.1rem",
+            lineHeight: 1.6,
+          }}
+        >
+          This is where you can manage your account and view your data. Your
+          wallet information is displayed in the floating navbar above.
+        </Typography>
+        <Typography
+          sx={{
+            color: "rgba(255, 255, 255, 0.8)",
+            fontSize: "1.1rem",
+            lineHeight: 1.6,
+          }}
+        >
+          This is where you can manage your account and view your data. Your
+          wallet information is displayed in the floating navbar above.
+        </Typography>
+        <Typography
+          sx={{
+            color: "rgba(255, 255, 255, 0.8)",
+            fontSize: "1.1rem",
+            lineHeight: 1.6,
+          }}
+        >
+          This is where you can manage your account and view your data. Your
+          wallet information is displayed in the floating navbar above.
+        </Typography>
+        <Typography
+          sx={{
+            color: "rgba(255, 255, 255, 0.8)",
+            fontSize: "1.1rem",
+            lineHeight: 1.6,
+          }}
+        >
+          This is where you can manage your account and view your data. Your
+          wallet information is displayed in the floating navbar above.
+        </Typography>
+        <Typography
+          sx={{
+            color: "rgba(255, 255, 255, 0.8)",
+            fontSize: "1.1rem",
+            lineHeight: 1.6,
+          }}
+        >
+          This is where you can manage your account and view your data. Your
+          wallet information is displayed in the floating navbar above.
+        </Typography>
+        <Typography
+          sx={{
+            color: "rgba(255, 255, 255, 0.8)",
+            fontSize: "1.1rem",
+            lineHeight: 1.6,
+          }}
+        >
+          This is where you can manage your account and view your data. Your
+          wallet information is displayed in the floating navbar above.
+        </Typography>
+        <Typography
+          sx={{
+            color: "rgba(255, 255, 255, 0.8)",
+            fontSize: "1.1rem",
+            lineHeight: 1.6,
+          }}
+        >
+          This is where you can manage your account and view your data. Your
+          wallet information is displayed in the floating navbar above.
+        </Typography>
+        <Typography
+          sx={{
+            color: "rgba(255, 255, 255, 0.8)",
+            fontSize: "1.1rem",
+            lineHeight: 1.6,
+          }}
+        >
+          This is where you can manage your account and view your data. Your
+          wallet information is displayed in the floating navbar above.
+        </Typography>
+        <Typography
+          sx={{
+            color: "rgba(255, 255, 255, 0.8)",
+            fontSize: "1.1rem",
+            lineHeight: 1.6,
+          }}
+        >
+          This is where you can manage your account and view your data. Your
+          wallet information is displayed in the floating navbar above.
+        </Typography>
+        <Typography
+          sx={{
+            color: "rgba(255, 255, 255, 0.8)",
+            fontSize: "1.1rem",
+            lineHeight: 1.6,
+          }}
+        >
+          This is where you can manage your account and view your data. Your
+          wallet information is displayed in the floating navbar above.
+        </Typography>
       </Box>
-      <Typography>
-        Welcome to your profile! This is where you can manage your account and
-        view your data.
-      </Typography>
     </Box>
   );
 };
