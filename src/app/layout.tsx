@@ -24,7 +24,7 @@ export default function RootLayout({
         className={roboto.className}
         style={{
           background:
-            "linear-gradient(180deg, #0f1123 0%, #1a1d3a 50%, #2d1b69 100%)",
+            "linear-gradient(180deg, #0f1123 0%, #15172a 50%, #0f0d16 100%)",
           minHeight: "100vh",
         }}
       >

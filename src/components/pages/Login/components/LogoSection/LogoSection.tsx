@@ -6,7 +6,7 @@ const LogoSection = () => (
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
-      mb: 6,
+      mb: 4,
       gap: 2,
     }}
   >
@@ -15,8 +15,8 @@ const LogoSection = () => (
       src="/logo.png"
       alt="Logo"
       sx={{
-        width: 120,
-        height: 120,
+        width: 80,
+        height: 80,
         borderRadius: "16px",
         objectFit: "contain",
         border: "2px solid",

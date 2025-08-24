@@ -1,30 +1,33 @@
-import { RocketLaunchOutlined as RocketIcon } from "@mui/icons-material";
 import { Box, Button, ButtonProps } from "@mui/material";
 import { ReactNode } from "react";
 
 interface AnimatedButtonProps extends Omit<ButtonProps, "children"> {
   children?: ReactNode;
-  showIcon?: boolean;
   iconComponent?: ReactNode;
   onClick?: () => void;
 }
 
 const AnimatedButton = ({
   children = "Click Me",
-  showIcon = true,
   iconComponent,
   onClick,
-  fullWidth = true,
+  fullWidth = false,
   variant = "outlined",
   ...props
 }: AnimatedButtonProps) => {
-  const Icon = iconComponent || (
-    <RocketIcon
-      className="rocket-icon"
+  const Icon = iconComponent && (
+    <Box
       sx={{
-        transition: "color 0.2s",
+        display: "flex",
+        alignItems: "center",
+        fontSize: "1rem",
+        "& > *": {
+          fontSize: "inherit !important",
+        },
       }}
-    />
+    >
+      {iconComponent}
+    </Box>
   );
 
   return (
@@ -35,8 +38,8 @@ const AnimatedButton = ({
       sx={{
         textTransform: "none",
         borderRadius: "20px",
-        padding: "10px 24px",
-        fontSize: "1rem",
+        padding: "4px 16px",
+        fontSize: "0.875rem",
         fontWeight: 300,
         letterSpacing: "0.02em",
         transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
@@ -61,7 +64,7 @@ const AnimatedButton = ({
         }}
       >
         {children}
-        {showIcon && Icon}
+        {Icon}
       </Box>
     </Button>
   );

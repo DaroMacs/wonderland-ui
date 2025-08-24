@@ -1,5 +1,8 @@
 import AnimatedButton from "@/ui/AnimatedButton";
-import { AccountBalanceWallet as MetaMaskIcon } from "@mui/icons-material";
+import {
+  AccountBalanceWallet,
+  RocketLaunchOutlined,
+} from "@mui/icons-material";
 import { Box, Card, CardContent, Typography } from "@mui/material";
 import FeaturesList from "../FeaturesList";
 import LogoSection from "../LogoSection";
@@ -10,6 +13,7 @@ const LoginForm = () => (
       background: "linear-gradient(135deg, #06b6d4, #3b82f6)",
       borderRadius: "20px",
       padding: "1px",
+      boxShadow: "0 4px 12px rgba(6, 182, 212, 0.4)",
     }}
   >
     <Card
@@ -39,14 +43,22 @@ const LoginForm = () => (
       </Box>
 
       <CardContent sx={{ p: 3 }}>
-        <Box component="form" sx={{ "& > *": { mb: 2 } }}>
+        <Box
+          component="form"
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: 2,
+          }}
+        >
           <LogoSection />
 
-          <Box sx={{ mb: 2 }}>
-            <AnimatedButton>Connect Wallet</AnimatedButton>
-          </Box>
+          <AnimatedButton iconComponent={<AccountBalanceWallet />}>
+            Connect Wallet
+          </AnimatedButton>
 
-          <AnimatedButton iconComponent={<MetaMaskIcon />}>
+          <AnimatedButton iconComponent={<RocketLaunchOutlined />}>
             Get MetaMask
           </AnimatedButton>
 
