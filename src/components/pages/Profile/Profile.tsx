@@ -1,6 +1,6 @@
 "use client";
 
-import { FloatingNavbar } from "@/components/ui/FloatingNavbar";
+import { FloatingNavbar } from "@/components/elements/FloatingNavbar";
 import { Box, Typography } from "@mui/material";
 
 const Profile = () => (
