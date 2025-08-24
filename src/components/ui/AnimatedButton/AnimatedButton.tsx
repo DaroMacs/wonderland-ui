@@ -44,12 +44,11 @@ const AnimatedButton = ({
         letterSpacing: "0.02em",
         transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
         borderColor: "#a855f7",
-        color: "#a855f7",
+        color: "#fff",
         "&:hover": {
           transform: "translateY(-2px)",
           boxShadow: "0 8px 25px #a855f740",
           borderColor: "#ff6b9d",
-          color: "#ff6b9d",
           backgroundColor: "#ff6b9d10",
         },
         ...props.sx,
