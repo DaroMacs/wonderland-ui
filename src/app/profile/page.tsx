@@ -1,24 +1,24 @@
 "use client";
 
-import Login from "@/components/pages/Login";
-import { PROFILE } from "@/constants/routes";
+import Profile from "@/components/pages/Profile";
+import { LOGIN } from "@/constants/routes";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { useAccount } from "wagmi";
 
-export default function LoginPage() {
+export default function ProfilePage() {
   const { isConnected } = useAccount();
   const router = useRouter();
 
   useEffect(() => {
-    if (isConnected) {
-      router.push(PROFILE);
+    if (!isConnected) {
+      router.push(LOGIN);
     }
   }, [isConnected, router]);
 
-  if (isConnected) {
+  if (!isConnected) {
     return null;
   }
 
-  return <Login />;
+  return <Profile />;
 }

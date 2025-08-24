@@ -14,7 +14,7 @@ const LoginHeader = () => (
         marginTop: "20px",
       }}
     >
-      Access your dashboard and verify on-chain data with ease. No complex setup
+      Access your profile and verify on-chain data with ease. No complex setup
       required.
     </Typography>
   </Box>
