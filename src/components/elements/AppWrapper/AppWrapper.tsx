@@ -34,7 +34,6 @@ const AppWrapper = ({ children }: { children: React.ReactNode }) => {
               maxWidth="lg"
               sx={{
                 py: 4,
-                px: { xs: 2, sm: 3, md: 4 },
               }}
             >
               {children}
