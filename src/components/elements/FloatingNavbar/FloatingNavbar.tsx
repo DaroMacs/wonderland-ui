@@ -1,14 +1,13 @@
 "use client";
 
 import { LOGIN } from "@/constants/routes";
+import { useWeb3 } from "@/context/web3";
 import { Box, Chip } from "@mui/material";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useAccount, useDisconnect } from "wagmi";
 
 export function FloatingNavbar() {
-  const { disconnect } = useDisconnect();
-  const { address } = useAccount();
+  const { address, disconnect } = useWeb3();
   const router = useRouter();
 
   const handleLogout = () => {

@@ -2,12 +2,12 @@
 
 import Profile from "@/components/pages/Profile";
 import { LOGIN } from "@/constants/routes";
+import { useWeb3 } from "@/context/web3";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
-import { useAccount } from "wagmi";
 
-export default function ProfilePage() {
-  const { isConnected } = useAccount();
+const ProfilePage = () => {
+  const { isConnected } = useWeb3();
   const router = useRouter();
 
   useEffect(() => {
@@ -21,4 +21,6 @@ export default function ProfilePage() {
   }
 
   return <Profile />;
-}
+};
+
+export default ProfilePage;

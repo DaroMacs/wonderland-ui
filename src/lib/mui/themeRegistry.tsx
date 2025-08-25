@@ -5,11 +5,7 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import * as React from "react";
 import { darkTheme } from "./theme";
 
-export default function ThemeRegistry({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+const ThemeRegistry = ({ children }: { children: React.ReactNode }) => {
   return (
     <AppRouterCacheProvider>
       <ThemeProvider theme={darkTheme}>
@@ -18,4 +14,6 @@ export default function ThemeRegistry({
       </ThemeProvider>
     </AppRouterCacheProvider>
   );
-}
+};
+
+export default ThemeRegistry;

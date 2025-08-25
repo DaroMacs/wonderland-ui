@@ -1,6 +1,7 @@
 "use client";
 
 import { LOGIN } from "@/constants/routes";
+import { Web3Provider } from "@/context/web3";
 import ThemeRegistry from "@/lib/mui/themeRegistry";
 import { RainbowProvider } from "@/lib/walletConnection/providers";
 import Starfield from "@/styles/Starfield/Starfield";
@@ -21,27 +22,29 @@ const AppWrapper = ({ children }: { children: React.ReactNode }) => {
         starCount={5000}
       />
       <RainbowProvider>
-        <ThemeRegistry>
-          <Box
-            component="main"
-            sx={{
-              minHeight: "100vh",
-              position: "relative",
-              zIndex: 1,
-            }}
-          >
-            <Container
-              maxWidth="lg"
+        <Web3Provider>
+          <ThemeRegistry>
+            <Box
+              component="main"
               sx={{
-                py: 4,
+                minHeight: "100vh",
+                position: "relative",
+                zIndex: 1,
               }}
             >
-              {children}
-            </Container>
+              <Container
+                maxWidth="lg"
+                sx={{
+                  py: 4,
+                }}
+              >
+                {children}
+              </Container>
 
-            {isLoginPage && <Globe />}
-          </Box>
-        </ThemeRegistry>
+              {isLoginPage && <Globe />}
+            </Box>
+          </ThemeRegistry>
+        </Web3Provider>
       </RainbowProvider>
     </>
   );
