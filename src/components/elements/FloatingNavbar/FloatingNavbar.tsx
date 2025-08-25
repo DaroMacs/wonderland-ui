@@ -1,10 +1,10 @@
 "use client";
 
-import { LOGIN } from "@/constants/routes";
-import { useWeb3 } from "@/context/web3";
 import { Box, Chip } from "@mui/material";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { LOGIN } from "@/constants/routes";
+import { useWeb3 } from "@/context/web3";
 
 export function FloatingNavbar() {
   const { address, disconnect } = useWeb3();

@@ -1,7 +1,5 @@
 "use client";
 
-import { useWeb3 } from "@/context/web3";
-import AnimatedButton from "@/ui/AnimatedButton";
 import {
   AccountBalanceWallet,
   RocketLaunchOutlined,
@@ -9,6 +7,8 @@ import {
 import { Box, Card, CardContent, Typography } from "@mui/material";
 import FeaturesList from "../FeaturesList";
 import LogoSection from "../LogoSection";
+import { useWeb3 } from "@/context/web3";
+import AnimatedButton from "@/ui/AnimatedButton";
 
 const LoginForm = () => {
   const { openConnectModal } = useWeb3();

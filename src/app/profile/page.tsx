@@ -1,10 +1,10 @@
 "use client";
 
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import Profile from "@/components/pages/Profile";
 import { LOGIN } from "@/constants/routes";
 import { useWeb3 } from "@/context/web3";
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
 
 const ProfilePage = () => {
   const { isConnected } = useWeb3();

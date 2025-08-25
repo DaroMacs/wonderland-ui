@@ -1,6 +1,6 @@
+import { Box } from "@mui/material";
 import { FloatingNavbar } from "@/components/elements/FloatingNavbar";
 import TokenContent from "@/components/pages/Profile/components/TokenContent";
-import { Box } from "@mui/material";
 
 const Profile = () => (
   <Box>

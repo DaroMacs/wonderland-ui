@@ -1,6 +1,6 @@
 "use client";
-import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { useMemo, type ReactNode } from "react";
+import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { useAccount, useDisconnect } from "wagmi";
 import { Web3Context } from "./Web3Context";
 

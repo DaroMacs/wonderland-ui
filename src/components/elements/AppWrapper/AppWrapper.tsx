@@ -1,9 +1,9 @@
+import { Box, Container } from "@mui/material";
+import Globe from "../Globe";
 import { Web3Provider } from "@/context/web3";
 import ThemeRegistry from "@/lib/mui/themeRegistry";
 import { RainbowProvider } from "@/lib/walletConnection/providers";
 import Starfield from "@/styles/Starfield/Starfield";
-import { Box, Container } from "@mui/material";
-import Globe from "../Globe";
 
 const AppWrapper = ({ children }: { children: React.ReactNode }) => (
   <>
