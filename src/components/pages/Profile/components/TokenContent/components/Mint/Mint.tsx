@@ -43,7 +43,7 @@ const Mint = ({ timeout = 1600 }: MintProps) => {
           borderColor: alpha("#ffffff", 0.1),
           borderRadius: 3,
           transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-          height: "fit-content",
+          height: "100%",
           "&:hover": {
             borderColor: alpha("#11998e", 0.3),
             boxShadow: `0 20px 40px ${alpha("#11998e", 0.1)}`,

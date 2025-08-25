@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Send as SendIcon } from "@mui/icons-material";
+import { CheckCircle as CheckCircleIcon } from "@mui/icons-material";
 import {
   Box,
   Card,
@@ -16,22 +16,22 @@ import { Address } from "viem";
 import AnimatedButton from "@/components/ui/AnimatedButton";
 import useDAIToken from "@/hooks/useDAIToken";
 
-interface TransferProps {
+interface ApproveProps {
   timeout?: number;
 }
 
-const Transfer = ({ timeout = 1500 }: TransferProps) => {
-  const { transfer, isTransferPending } = useDAIToken();
-  const [transferTo, setTransferTo] = useState("");
-  const [transferAmount, setTransferAmount] = useState("");
+const Approve = ({ timeout = 1700 }: ApproveProps) => {
+  const { approve, isApprovePending } = useDAIToken();
+  const [spenderAddress, setSpenderAddress] = useState("");
+  const [approveAmount, setApproveAmount] = useState("");
 
-  const handleTransfer = (e: React.FormEvent) => {
+  const handleApprove = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!transferTo || !transferAmount) return;
+    if (!spenderAddress || !approveAmount) return;
 
-    transfer(transferTo as Address, transferAmount);
-    setTransferTo("");
-    setTransferAmount("");
+    approve(spenderAddress as Address, approveAmount);
+    setSpenderAddress("");
+    setApproveAmount("");
   };
 
   return (
@@ -46,27 +46,29 @@ const Transfer = ({ timeout = 1500 }: TransferProps) => {
           transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
           height: "100%",
           "&:hover": {
-            borderColor: alpha("#667eea", 0.3),
-            boxShadow: `0 20px 40px ${alpha("#667eea", 0.1)}`,
+            borderColor: alpha("#38b2ac", 0.3),
+            boxShadow: `0 20px 40px ${alpha("#38b2ac", 0.1)}`,
             transform: "translateY(-2px)",
           },
         }}
       >
         <CardContent sx={{ p: 2 }}>
           <Box display="flex" alignItems="center" mb={2}>
-            <SendIcon sx={{ mr: 1, color: "#38b2ac", fontSize: "1rem" }} />
+            <CheckCircleIcon
+              sx={{ mr: 1, color: "#38b2ac", fontSize: "1rem" }}
+            />
             <Typography variant="h6" fontWeight={400}>
-              Transfer Tokens
+              Approve Tokens
             </Typography>
           </Box>
 
-          <Box component="form" onSubmit={handleTransfer}>
+          <Box component="form" onSubmit={handleApprove}>
             <TextField
               fullWidth
-              label="To Address"
+              label="Spender Address"
               placeholder="0x..."
-              value={transferTo}
-              onChange={(e) => setTransferTo(e.target.value)}
+              value={spenderAddress}
+              onChange={(e) => setSpenderAddress(e.target.value)}
               required
               sx={{
                 mb: 2,
@@ -80,8 +82,8 @@ const Transfer = ({ timeout = 1500 }: TransferProps) => {
               label="Amount"
               type="number"
               placeholder="0.0"
-              value={transferAmount}
-              onChange={(e) => setTransferAmount(e.target.value)}
+              value={approveAmount}
+              onChange={(e) => setApproveAmount(e.target.value)}
               required
               sx={{
                 mb: 3,
@@ -95,15 +97,15 @@ const Transfer = ({ timeout = 1500 }: TransferProps) => {
               fullWidth
               variant="outlined"
               iconComponent={
-                isTransferPending ? (
+                isApprovePending ? (
                   <CircularProgress size={20} color="inherit" />
                 ) : (
-                  <SendIcon />
+                  <CheckCircleIcon />
                 )
               }
-              disabled={isTransferPending}
+              disabled={isApprovePending}
             >
-              {isTransferPending ? "Processing..." : "Transfer"}
+              {isApprovePending ? "Processing..." : "Approve"}
             </AnimatedButton>
           </Box>
         </CardContent>
@@ -112,4 +114,4 @@ const Transfer = ({ timeout = 1500 }: TransferProps) => {
   );
 };
 
-export default Transfer;
+export default Approve;

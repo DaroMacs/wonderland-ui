@@ -29,7 +29,7 @@ const TokenInfo = ({ timeout = 1300 }: TokenInfoProps) => {
           borderColor: alpha("#ffffff", 0.1),
           borderRadius: 3,
           transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-          flex: 1,
+          height: "100%",
           display: "flex",
           flexDirection: "column",
           "&:hover": {
@@ -54,15 +54,15 @@ const TokenInfo = ({ timeout = 1300 }: TokenInfoProps) => {
               display: "grid",
               gridTemplateColumns: "repeat(2, 1fr)",
               gridTemplateRows: "repeat(2, 1fr)",
-              gap: 2,
+              gap: 1,
               flex: 1,
-              minHeight: 120,
+              minHeight: 80,
             }}
           >
             <Grow in timeout={timeout + 100}>
               <Paper
                 sx={{
-                  p: 2,
+                  p: 1,
                   textAlign: "center",
                   bgcolor: alpha("#ffffff", 0.02),
                   border: "1px solid",
@@ -73,7 +73,7 @@ const TokenInfo = ({ timeout = 1300 }: TokenInfoProps) => {
                   flexDirection: "column",
                   justifyContent: "center",
                   height: "100%",
-                  minHeight: 50,
+                  minHeight: 30,
                   overflow: "hidden",
                   "&:hover": {
                     transform: "translateY(-1px)",
@@ -105,7 +105,7 @@ const TokenInfo = ({ timeout = 1300 }: TokenInfoProps) => {
             <Grow in timeout={timeout + 200}>
               <Paper
                 sx={{
-                  p: 2,
+                  p: 1,
                   textAlign: "center",
                   bgcolor: alpha("#ffffff", 0.02),
                   border: "1px solid",
@@ -116,7 +116,7 @@ const TokenInfo = ({ timeout = 1300 }: TokenInfoProps) => {
                   flexDirection: "column",
                   justifyContent: "center",
                   height: "100%",
-                  minHeight: 50,
+                  minHeight: 30,
                   overflow: "hidden",
                   "&:hover": {
                     transform: "translateY(-1px)",
@@ -148,7 +148,7 @@ const TokenInfo = ({ timeout = 1300 }: TokenInfoProps) => {
             <Grow in timeout={timeout + 300}>
               <Paper
                 sx={{
-                  p: 2,
+                  p: 1,
                   textAlign: "center",
                   bgcolor: alpha("#ffffff", 0.02),
                   border: "1px solid",
@@ -159,7 +159,7 @@ const TokenInfo = ({ timeout = 1300 }: TokenInfoProps) => {
                   flexDirection: "column",
                   justifyContent: "center",
                   height: "100%",
-                  minHeight: 50,
+                  minHeight: 30,
                   overflow: "hidden",
                   "&:hover": {
                     transform: "translateY(-1px)",
@@ -191,7 +191,7 @@ const TokenInfo = ({ timeout = 1300 }: TokenInfoProps) => {
             <Grow in timeout={timeout + 400}>
               <Paper
                 sx={{
-                  p: 2,
+                  p: 1,
                   textAlign: "center",
                   bgcolor: alpha("#ffffff", 0.02),
                   border: "1px solid",
@@ -202,7 +202,7 @@ const TokenInfo = ({ timeout = 1300 }: TokenInfoProps) => {
                   flexDirection: "column",
                   justifyContent: "center",
                   height: "100%",
-                  minHeight: 50,
+                  minHeight: 30,
                   overflow: "hidden",
                   "&:hover": {
                     transform: "translateY(-1px)",

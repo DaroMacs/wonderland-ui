@@ -64,7 +64,7 @@ const Balance = ({ timeout = 1200 }: BalanceProps) => {
           position: "relative",
           overflow: "hidden",
           transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-          height: "fit-content",
+          height: "100%",
           "&:hover": {
             borderColor: alpha("#667eea", 0.3),
             animation: `${glow} 2s infinite`,
