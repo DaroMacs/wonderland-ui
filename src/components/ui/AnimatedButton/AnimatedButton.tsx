@@ -1,5 +1,5 @@
-import { Box, Button, ButtonProps } from "@mui/material";
 import { ReactNode } from "react";
+import { Box, Button, ButtonProps } from "@mui/material";
 
 interface AnimatedButtonProps extends Omit<ButtonProps, "children"> {
   children?: ReactNode;
