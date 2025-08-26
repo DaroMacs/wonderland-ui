@@ -1,1 +1,1 @@
-export { FloatingNavbar } from "./FloatingNavbar";
+export { default } from "./FloatingNavbar";
