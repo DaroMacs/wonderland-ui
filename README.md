@@ -2,6 +2,10 @@
 
 A **Next.js React application** that demonstrates comprehensive blockchain integration with wallet connection, token management, and event tracking. Built with modern React patterns, TypeScript, and a clean component architecture.
 
+## Video quick walkthrough
+
+## Try out the demo
+
 ## Screen samples with responsiveness
 
 <table>
@@ -14,9 +18,18 @@ A **Next.js React application** that demonstrates comprehensive blockchain integ
 
 <table>
   <tr>
-    <img width="1410" height="963" alt="image" src="https://github.com/user-attachments/assets/51a4f949-d7dd-4075-b0e5-81fcee71336e" />
-    <img width="768" height="879" alt="image" src="https://github.com/user-attachments/assets/ffd60fa5-0bae-4abd-9514-499fbe40e6f0" />
-    <img width="422" height="874" alt="image" src="https://github.com/user-attachments/assets/92b09c1c-d8de-4886-932a-020935a64ea0" />
+     <td><img width="1410" height="963" alt="image" src="https://github.com/user-attachments/assets/51a4f949-d7dd-4075-b0e5-81fcee71336e" /></td>
+     <td><img width="767" height="880" alt="image" src="https://github.com/user-attachments/assets/3edf1d8d-c226-4b95-9093-57925af6c13a" /></td>
+     <td><img width="422" height="874" alt="image" src="https://github.com/user-attachments/assets/92b09c1c-d8de-4886-932a-020935a64ea0" /></td>
+  </tr>
+</table>
+
+### Modals
+
+<table>
+  <tr>
+    <td><img width="1436" height="874" alt="image" src="https://github.com/user-attachments/assets/0fc33ad0-3e5f-4610-97e3-351cc6543d67" /></td>
+    <td><img width="1431" height="871" alt="image" src="https://github.com/user-attachments/assets/fb5bf342-8ed2-417a-947f-a4759f8c86b6" /></td>
   </tr>
 </table>
 
