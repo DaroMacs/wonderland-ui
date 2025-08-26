@@ -2,7 +2,6 @@
 
 import {
   Box,
-  Chip,
   FormControl,
   Select,
   MenuItem,
@@ -10,20 +9,13 @@ import {
   SelectChangeEvent,
 } from "@mui/material";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
-import { LOGIN } from "@/constants/routes";
+import AddressChip from "@/components/ui/AddressChip";
 import { TokenType, useToken } from "@/context/token";
 import { useWeb3 } from "@/context/web3";
 
 const FloatingNavbar = () => {
-  const { address, disconnect } = useWeb3();
+  const { address, handleLogout } = useWeb3();
   const { activeToken, setActiveToken } = useToken();
-  const router = useRouter();
-
-  const handleLogout = () => {
-    disconnect();
-    router.push(LOGIN);
-  };
 
   const handleTokenChange = (event: SelectChangeEvent<string>) => {
     setActiveToken(event.target.value as TokenType);
@@ -70,6 +62,7 @@ const FloatingNavbar = () => {
             color: "rgba(255, 255, 255, 0.8)",
             fontSize: "0.875rem",
             fontWeight: 500,
+            display: { xs: "none", md: "block" },
           }}
         >
           Contract:
@@ -117,30 +110,9 @@ const FloatingNavbar = () => {
       </Box>
 
       {address && (
-        <Chip
-          label={`${address.slice(0, 6)}...${address.slice(-4)}`}
-          variant="outlined"
-          onClick={handleLogout}
-          sx={{
-            borderColor: "rgba(6, 182, 212, 0.6)",
-            color: "#06b6d4",
-            fontSize: "0.875rem",
-            background: "rgba(6, 182, 212, 0.1)",
-            backdropFilter: "blur(10px)",
-            cursor: "pointer",
-            "& .MuiChip-label": {
-              fontFamily: "monospace",
-              fontWeight: 500,
-            },
-            "&:hover": {
-              borderColor: "#06b6d4",
-              background: "rgba(6, 182, 212, 0.2)",
-              transform: "translateY(-1px)",
-              boxShadow: "0 4px 12px rgba(6, 182, 212, 0.3)",
-            },
-            transition: "all 0.2s ease-in-out",
-          }}
-        />
+        <Box sx={{ display: { xs: "none", md: "block" } }}>
+          <AddressChip address={address} onClick={handleLogout} />
+        </Box>
       )}
     </Box>
   );

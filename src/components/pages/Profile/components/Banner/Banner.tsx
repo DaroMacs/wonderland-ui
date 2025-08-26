@@ -16,6 +16,10 @@ const BridgeBanner = () => (
       position: "relative",
       overflow: "hidden",
       backdropFilter: "blur(10px)",
+      display: "none",
+      "@media (min-width: 768px)": {
+        display: "block",
+      },
       "&::before": {
         content: '""',
         position: "absolute",
@@ -61,7 +65,7 @@ const BridgeBanner = () => (
             display: { xs: "none", sm: "block" },
           }}
         >
-          — fast and seamless -
+          - fast and seamless -
         </Typography>
       </Box>
 

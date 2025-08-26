@@ -91,7 +91,12 @@ const LoginForm = () => {
               Connect Wallet
             </AnimatedButton>
 
-            <AnimatedButton iconComponent={<RocketLaunchOutlined />}>
+            <AnimatedButton
+              onClick={() => {
+                window.open("https://metamask.io/", "_blank");
+              }}
+              iconComponent={<RocketLaunchOutlined />}
+            >
               Get MetaMask
             </AnimatedButton>
 

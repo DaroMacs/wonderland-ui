@@ -7,6 +7,7 @@ export interface IWeb3Context {
   address: Address | undefined;
   disconnect: () => void;
   openConnectModal: (() => void) | undefined;
+  handleLogout: () => void;
 }
 
 export const Web3Context = createContext<IWeb3Context | undefined>(undefined);
