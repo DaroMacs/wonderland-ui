@@ -9,6 +9,15 @@ import {
   SelectChangeEvent,
 } from "@mui/material";
 import Image from "next/image";
+import {
+  navbarContainerStyles,
+  logoContainerStyles,
+  controlsContainerStyles,
+  contractLabelStyles,
+  formControlStyles,
+  selectStyles,
+  addressChipContainerStyles,
+} from "./styles";
 import AddressChip from "@/components/ui/AddressChip";
 import { TokenType, useToken } from "@/context/token";
 import { useWeb3 } from "@/context/web3";
@@ -22,28 +31,8 @@ const FloatingNavbar = () => {
   };
 
   return (
-    <Box
-      sx={{
-        position: "fixed",
-        top: "2rem",
-        left: "1rem",
-        right: "1rem",
-        zIndex: 1000,
-        maxWidth: "1200px",
-        margin: "0 auto",
-        background: "rgba(255, 255, 255, 0.1)",
-        backdropFilter: "blur(20px)",
-        WebkitBackdropFilter: "blur(20px)",
-        border: "1px solid rgba(255, 255, 255, 0.1)",
-        borderRadius: "30px",
-        padding: "0 1rem",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3)",
-      }}
-    >
-      <Box sx={{ display: "flex", alignItems: "center" }}>
+    <Box sx={navbarContainerStyles}>
+      <Box sx={logoContainerStyles}>
         <Image
           src="/logo-white.png"
           alt="Logo"
@@ -55,53 +44,15 @@ const FloatingNavbar = () => {
         />
       </Box>
 
-      <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-        <Typography
-          variant="body2"
-          sx={{
-            color: "rgba(255, 255, 255, 0.8)",
-            fontSize: "0.875rem",
-            fontWeight: 500,
-            display: { xs: "none", md: "block" },
-          }}
-        >
+      <Box sx={controlsContainerStyles}>
+        <Typography variant="body2" sx={contractLabelStyles}>
           Contract:
         </Typography>
-        <FormControl size="small" sx={{ minWidth: 120 }}>
+        <FormControl size="small" sx={formControlStyles}>
           <Select
             value={activeToken}
             onChange={handleTokenChange}
-            sx={{
-              color: "#06b6d4",
-              fontSize: "0.875rem",
-              fontWeight: 500,
-              height: "32px",
-              "& .MuiOutlinedInput-root": {
-                height: "32px",
-                borderRadius: "16px",
-                background: "rgba(6, 182, 212, 0.1)",
-                backdropFilter: "blur(10px)",
-              },
-              "& .MuiOutlinedInput-notchedOutline": {
-                borderColor: "rgba(6, 182, 212, 0.6)",
-                borderRadius: "16px",
-              },
-              "&:hover .MuiOutlinedInput-notchedOutline": {
-                borderColor: "#06b6d4",
-              },
-              "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                borderColor: "#06b6d4",
-              },
-              "& .MuiSelect-icon": {
-                color: "#06b6d4",
-              },
-              "& .MuiSelect-select": {
-                padding: "4px 12px",
-                display: "flex",
-                alignItems: "center",
-                height: "24px",
-              },
-            }}
+            sx={selectStyles}
           >
             <MenuItem value="dai">DAI</MenuItem>
             <MenuItem value="usdc">USDC</MenuItem>
@@ -110,7 +61,7 @@ const FloatingNavbar = () => {
       </Box>
 
       {address && (
-        <Box sx={{ display: { xs: "none", md: "block" } }}>
+        <Box sx={addressChipContainerStyles}>
           <AddressChip address={address} onClick={handleLogout} />
         </Box>
       )}

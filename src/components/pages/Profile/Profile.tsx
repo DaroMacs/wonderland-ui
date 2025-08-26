@@ -1,4 +1,8 @@
 import { Box } from "@mui/material";
+import {
+  profileContainerStyles,
+  mobileAddressChipContainerStyles,
+} from "./styles";
 import FloatingNavbar from "@/components/elements/FloatingNavbar";
 import Banner from "@/components/pages/Profile/components/Banner";
 import TokenContent from "@/components/pages/Profile/components/TokenContent";
@@ -11,21 +15,9 @@ const Profile = () => {
   return (
     <Box>
       <FloatingNavbar />
-      <Box
-        sx={{
-          marginTop: "80px",
-        }}
-      >
+      <Box sx={profileContainerStyles}>
         {address && (
-          <Box
-            sx={{
-              display: { xs: "flex", md: "none" },
-              flexDirection: "row",
-              justifyContent: "center",
-              alignItems: "center",
-              marginBottom: "10px",
-            }}
-          >
+          <Box sx={mobileAddressChipContainerStyles}>
             <AddressChip address={address} onClick={handleLogout} />
           </Box>
         )}

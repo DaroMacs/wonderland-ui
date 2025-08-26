@@ -1,5 +1,10 @@
 import { ReactNode } from "react";
 import { Box, Button, ButtonProps } from "@mui/material";
+import {
+  iconContainerStyles,
+  buttonStyles,
+  contentContainerStyles,
+} from "./styles";
 
 interface AnimatedButtonProps extends Omit<ButtonProps, "children"> {
   children?: ReactNode;
@@ -16,18 +21,7 @@ const AnimatedButton = ({
   ...props
 }: AnimatedButtonProps) => {
   const Icon = iconComponent && (
-    <Box
-      sx={{
-        display: "flex",
-        alignItems: "center",
-        fontSize: "1rem",
-        "& > *": {
-          fontSize: "inherit !important",
-        },
-      }}
-    >
-      {iconComponent}
-    </Box>
+    <Box sx={iconContainerStyles}>{iconComponent}</Box>
   );
 
   return (
@@ -36,32 +30,12 @@ const AnimatedButton = ({
       fullWidth={fullWidth}
       onClick={onClick}
       sx={{
-        textTransform: "none",
-        borderRadius: "20px",
-        padding: "4px 16px",
-        fontSize: "0.875rem",
-        fontWeight: 300,
-        letterSpacing: "0.02em",
-        transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-        borderColor: "#a855f7",
-        color: "#fff",
-        "&:hover": {
-          transform: "translateY(-2px)",
-          boxShadow: "0 8px 25px #a855f740",
-          borderColor: "#ff6b9d",
-          backgroundColor: "#ff6b9d10",
-        },
+        ...buttonStyles,
         ...props.sx,
       }}
       {...props}
     >
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          gap: 2,
-        }}
-      >
+      <Box sx={contentContainerStyles}>
         {children}
         {Icon}
       </Box>

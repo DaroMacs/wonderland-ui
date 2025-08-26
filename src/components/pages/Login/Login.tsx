@@ -2,18 +2,11 @@
 
 import { Box } from "@mui/material";
 import { LoginFooter, LoginForm, LoginHeader } from "./components";
+import { loginContainerStyles, loginContentStyles } from "./styles";
 
 const Login = () => (
-  <Box
-    sx={{
-      color: "text.primary",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      padding: 3,
-    }}
-  >
-    <Box sx={{ width: "100%", maxWidth: 448 }}>
+  <Box sx={loginContainerStyles}>
+    <Box sx={loginContentStyles}>
       <LoginHeader />
       <LoginForm />
       <LoginFooter />

@@ -10,6 +10,10 @@ import {
   TokenInfo,
   Transfer,
 } from "./components";
+import {
+  tokenContentContainerStyles,
+  eventsTableContainerStyles,
+} from "./styles";
 import LoadingState from "@/components/elements/LoadingState";
 import { useToken } from "@/context/token";
 
@@ -22,38 +26,14 @@ const TokenContent = () => {
   }
 
   return (
-    <Box
-      sx={{
-        display: "grid",
-        gridTemplateColumns: { xs: "1fr", md: "1fr 1fr 1fr" },
-        gridTemplateRows: {
-          xs: "auto auto auto auto auto auto auto",
-          md: "1fr 1fr auto",
-        },
-        gap: { xs: 2, md: 3 },
-        maxWidth: 1400,
-        mx: "auto",
-        mb: 25,
-        width: "100%",
-        px: { xs: 2, sm: 3, md: 4 },
-        "& > *": {
-          minWidth: 0, // Prevent grid items from overflowing
-        },
-      }}
-    >
+    <Box sx={tokenContentContainerStyles}>
       <Balance />
       <TokenInfo />
       <AllowanceChecker />
       <Approve />
       <Transfer />
       <Mint />
-      <Box
-        sx={{
-          gridColumn: { xs: "1", md: "1 / -1" },
-          minWidth: 0, // Prevent overflow
-          overflow: "hidden", // Contain the EventsTable
-        }}
-      >
+      <Box sx={eventsTableContainerStyles}>
         <EventsTable />
       </Box>
     </Box>

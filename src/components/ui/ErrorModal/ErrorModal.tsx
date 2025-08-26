@@ -10,6 +10,14 @@ import {
   Button,
   Box,
 } from "@mui/material";
+import {
+  dialogPaperStyles,
+  dialogTitleStyles,
+  warningIconStyles,
+  messageStyles,
+  dialogActionsStyles,
+  okButtonStyles,
+} from "./styles";
 
 interface ErrorModalProps {
   open: boolean;
@@ -26,38 +34,24 @@ const ErrorModal = ({ open, onClose, title, message }: ErrorModalProps) => {
       maxWidth="sm"
       fullWidth
       PaperProps={{
-        sx: {
-          bgcolor: "rgba(0, 0, 0, 0.9)",
-          backdropFilter: "blur(20px)",
-          border: "1px solid rgba(255, 255, 255, 0.1)",
-          borderRadius: 3,
-        },
+        sx: dialogPaperStyles,
       }}
     >
-      <DialogTitle sx={{ pb: 1 }}>
+      <DialogTitle sx={dialogTitleStyles}>
         <Box display="flex" alignItems="center">
-          <WarningIcon sx={{ mr: 1, color: "#f56565", fontSize: "1.5rem" }} />
+          <WarningIcon sx={warningIconStyles} />
           <Typography variant="h6" color="white">
             {title}
           </Typography>
         </Box>
       </DialogTitle>
       <DialogContent>
-        <Typography color="rgba(255, 255, 255, 0.8)" sx={{ mb: 2 }}>
+        <Typography color="rgba(255, 255, 255, 0.8)" sx={messageStyles}>
           {message}
         </Typography>
       </DialogContent>
-      <DialogActions sx={{ p: 2, pt: 0 }}>
-        <Button
-          onClick={onClose}
-          variant="contained"
-          sx={{
-            bgcolor: "#38b2ac",
-            "&:hover": {
-              bgcolor: "#319795",
-            },
-          }}
-        >
+      <DialogActions sx={dialogActionsStyles}>
+        <Button onClick={onClose} variant="contained" sx={okButtonStyles}>
           OK
         </Button>
       </DialogActions>

@@ -1,5 +1,6 @@
 import { Box, Container } from "@mui/material";
 import Globe from "../Globe";
+import { mainContainerStyles, containerStyles } from "./styles";
 import { TokenProvider } from "@/context/token";
 import { Web3Provider } from "@/context/web3";
 import ThemeRegistry from "@/lib/mui/themeRegistry";
@@ -18,20 +19,8 @@ const AppWrapper = ({ children }: { children: React.ReactNode }) => (
       <Web3Provider>
         <TokenProvider>
           <ThemeRegistry>
-            <Box
-              component="main"
-              sx={{
-                minHeight: "100vh",
-                position: "relative",
-                zIndex: 1,
-              }}
-            >
-              <Container
-                maxWidth="lg"
-                sx={{
-                  py: 4,
-                }}
-              >
+            <Box component="main" sx={mainContainerStyles}>
+              <Container maxWidth="lg" sx={containerStyles}>
                 {children}
               </Container>
 

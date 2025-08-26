@@ -10,9 +10,16 @@ import {
   Grow,
   TextField,
   Typography,
-  alpha,
 } from "@mui/material";
 import { Address } from "viem";
+import {
+  transferCardStyles,
+  transferCardContentStyles,
+  transferHeaderStyles,
+  transferIconStyles,
+  transferTextFieldStyles,
+  transferAmountFieldStyles,
+} from "./styles";
 import AnimatedButton from "@/components/ui/AnimatedButton";
 import ErrorModal from "@/components/ui/ErrorModal";
 import { useToken } from "@/context/token";
@@ -57,29 +64,14 @@ const Transfer = () => {
   return (
     <>
       <Grow in timeout={1500}>
-        <Card
-          sx={{
-            bgcolor: alpha("#ffffff", 0.02),
-            backdropFilter: "blur(20px)",
-            border: "1px solid",
-            borderColor: alpha("#ffffff", 0.1),
-            borderRadius: 3,
-            transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-            height: "100%",
-            "&:hover": {
-              borderColor: alpha("#667eea", 0.3),
-              boxShadow: `0 20px 40px ${alpha("#667eea", 0.1)}`,
-              transform: "translateY(-2px)",
-            },
-          }}
-        >
-          <CardContent sx={{ p: { xs: 1.5, md: 2 } }}>
+        <Card sx={transferCardStyles}>
+          <CardContent sx={transferCardContentStyles}>
             <Box display="flex" alignItems="center" mb={2}>
-              <SendIcon sx={{ mr: 1, color: "#38b2ac", fontSize: "1rem" }} />
+              <SendIcon sx={transferIconStyles} />
               <Typography
                 variant="h6"
                 fontWeight={400}
-                sx={{ fontSize: { xs: "1rem", md: "1.25rem" } }}
+                sx={transferHeaderStyles}
               >
                 Transfer Tokens
               </Typography>
@@ -93,12 +85,7 @@ const Transfer = () => {
                 value={transferTo}
                 onChange={(e) => setTransferTo(e.target.value)}
                 required
-                sx={{
-                  mb: 2,
-                  "& .MuiOutlinedInput-root": {
-                    borderRadius: 6,
-                  },
-                }}
+                sx={transferTextFieldStyles}
               />
               <TextField
                 fullWidth
@@ -118,12 +105,7 @@ const Transfer = () => {
                   min: 0,
                 }}
                 required
-                sx={{
-                  mb: 3,
-                  "& .MuiOutlinedInput-root": {
-                    borderRadius: 6,
-                  },
-                }}
+                sx={transferAmountFieldStyles}
               />
               <AnimatedButton
                 type="submit"
