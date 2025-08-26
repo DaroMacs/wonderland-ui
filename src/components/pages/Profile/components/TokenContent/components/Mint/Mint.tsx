@@ -13,8 +13,8 @@ import {
   alpha,
 } from "@mui/material";
 import AnimatedButton from "@/components/ui/AnimatedButton";
+import { useToken } from "@/context/token";
 import { useWeb3 } from "@/context/web3";
-import useDAIToken from "@/hooks/useDAIToken";
 
 interface MintProps {
   timeout?: number;
@@ -22,7 +22,7 @@ interface MintProps {
 
 const Mint = ({ timeout = 1600 }: MintProps) => {
   const { address } = useWeb3();
-  const { mint, isMintPending } = useDAIToken();
+  const { mint, isMintPending } = useToken();
   const [mintAmount, setMintAmount] = useState("");
 
   const handleMint = (e: React.FormEvent) => {

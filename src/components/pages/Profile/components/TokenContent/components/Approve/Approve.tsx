@@ -15,14 +15,14 @@ import {
 import { Address } from "viem";
 import AnimatedButton from "@/components/ui/AnimatedButton";
 import ErrorModal from "@/components/ui/ErrorModal";
-import useDAIToken from "@/hooks/useDAIToken";
+import { useToken } from "@/context/token";
 
 interface ApproveProps {
   timeout?: number;
 }
 
 const Approve = ({ timeout = 1700 }: ApproveProps) => {
-  const { approve, isApprovePending, balance, parseAmount } = useDAIToken();
+  const { approve, isApprovePending, balance, parseAmount } = useToken();
   const [spenderAddress, setSpenderAddress] = useState("");
   const [approveAmount, setApproveAmount] = useState("");
   const [errorModal, setErrorModal] = useState({

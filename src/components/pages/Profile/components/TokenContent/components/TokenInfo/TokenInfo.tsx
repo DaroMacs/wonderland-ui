@@ -10,14 +10,14 @@ import {
   Typography,
   alpha,
 } from "@mui/material";
-import useDAIToken from "@/hooks/useDAIToken";
+import { useToken } from "@/context/token";
 
 interface TokenInfoProps {
   timeout?: number;
 }
 
 const TokenInfo = ({ timeout = 1300 }: TokenInfoProps) => {
-  const { tokenInfo } = useDAIToken();
+  const { tokenInfo } = useToken();
 
   return (
     <Grow in timeout={timeout}>

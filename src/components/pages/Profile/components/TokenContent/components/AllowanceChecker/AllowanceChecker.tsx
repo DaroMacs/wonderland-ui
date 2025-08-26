@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import {
+  Search as SearchIcon,
+  Close as CloseIcon,
+  CheckCircle as CheckCircleIcon,
+} from "@mui/icons-material";
+import {
   Box,
   Card,
   CardContent,
@@ -15,15 +20,10 @@ import {
   Fade,
   IconButton,
 } from "@mui/material";
-import {
-  Search as SearchIcon,
-  Close as CloseIcon,
-  CheckCircle as CheckCircleIcon,
-} from "@mui/icons-material";
 import { Address, isAddress } from "viem";
-import useDAIToken from "@/hooks/useDAIToken";
 import { useAccount } from "wagmi";
 import AnimatedButton from "@/components/ui/AnimatedButton";
+import { useToken } from "@/context/token";
 
 interface AllowanceCheckerProps {
   timeout?: number;
@@ -31,7 +31,7 @@ interface AllowanceCheckerProps {
 
 const AllowanceChecker = ({ timeout = 1800 }: AllowanceCheckerProps) => {
   const { address: userAddress } = useAccount();
-  const { checkAllowance, getFormattedAllowance } = useDAIToken();
+  const { checkAllowance, getFormattedAllowance } = useToken();
   const [ownerAddress, setOwnerAddress] = useState("");
   const [spenderAddress, setSpenderAddress] = useState("");
   const [isLoading, setIsLoading] = useState(false);

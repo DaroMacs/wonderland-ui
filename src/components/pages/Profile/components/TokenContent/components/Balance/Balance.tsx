@@ -12,7 +12,7 @@ import {
   alpha,
   keyframes,
 } from "@mui/material";
-import useDAIToken from "@/hooks/useDAIToken";
+import { useToken } from "@/context/token";
 
 // Keyframe animations
 const glow = keyframes`
@@ -38,7 +38,7 @@ interface BalanceProps {
 }
 
 const Balance = ({ timeout = 1200 }: BalanceProps) => {
-  const { tokenInfo, formattedBalance, refetchBalance } = useDAIToken();
+  const { tokenInfo, formattedBalance, refetchBalance } = useToken();
   const [isRefreshing, setIsRefreshing] = useState(false);
 
   const handleRefresh = async () => {

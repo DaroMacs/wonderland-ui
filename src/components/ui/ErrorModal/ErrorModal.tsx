@@ -1,5 +1,6 @@
 "use client";
 
+import { Warning as WarningIcon } from "@mui/icons-material";
 import {
   Dialog,
   DialogTitle,
@@ -9,7 +10,6 @@ import {
   Button,
   Box,
 } from "@mui/material";
-import { Warning as WarningIcon } from "@mui/icons-material";
 
 interface ErrorModalProps {
   open: boolean;

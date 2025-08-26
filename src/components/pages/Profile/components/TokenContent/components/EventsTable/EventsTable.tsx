@@ -20,10 +20,10 @@ import {
   Alert,
   Link,
 } from "@mui/material";
-import useDAIToken, { TokenEvent } from "@/hooks/useDAIToken";
+import { useToken, TokenEvent } from "@/context/token";
 
 const EventsTable = () => {
-  const { events, isLoadingEvents, eventsError, refetchEvents } = useDAIToken();
+  const { events, isLoadingEvents, eventsError, refetchEvents } = useToken();
 
   const formatAddress = (address: string): string => {
     return `${address.slice(0, 6)}...${address.slice(-4)}`;

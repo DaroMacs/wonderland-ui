@@ -15,14 +15,14 @@ import {
 import { Address } from "viem";
 import AnimatedButton from "@/components/ui/AnimatedButton";
 import ErrorModal from "@/components/ui/ErrorModal";
-import useDAIToken from "@/hooks/useDAIToken";
+import { useToken } from "@/context/token";
 
 interface TransferProps {
   timeout?: number;
 }
 
 const Transfer = ({ timeout = 1500 }: TransferProps) => {
-  const { transfer, isTransferPending, balance, parseAmount } = useDAIToken();
+  const { transfer, isTransferPending, balance, parseAmount } = useToken();
   const [transferTo, setTransferTo] = useState("");
   const [transferAmount, setTransferAmount] = useState("");
   const [errorModal, setErrorModal] = useState({
