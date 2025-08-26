@@ -110,7 +110,7 @@ const AllowanceChecker = ({ timeout = 1800 }: AllowanceCheckerProps) => {
           },
         }}
       >
-        <CardContent sx={{ p: 2 }}>
+        <CardContent sx={{ p: { xs: 1.5, md: 2 } }}>
           <Box
             display="flex"
             alignItems="center"
@@ -119,7 +119,11 @@ const AllowanceChecker = ({ timeout = 1800 }: AllowanceCheckerProps) => {
           >
             <Box display="flex" alignItems="center">
               <SearchIcon sx={{ mr: 1, color: "#38b2ac", fontSize: "1rem" }} />
-              <Typography variant="h6" fontWeight={400}>
+              <Typography
+                variant="h6"
+                fontWeight={400}
+                sx={{ fontSize: { xs: "1rem", md: "1.25rem" } }}
+              >
                 Check Allowance
               </Typography>
             </Box>

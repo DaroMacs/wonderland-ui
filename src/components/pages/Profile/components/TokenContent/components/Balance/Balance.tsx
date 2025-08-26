@@ -82,8 +82,12 @@ const Balance = ({ timeout = 1200 }: BalanceProps) => {
           },
         }}
       >
-        <CardContent sx={{ p: 2, textAlign: "center" }}>
-          <Typography variant="h6" mb={1}>
+        <CardContent sx={{ p: { xs: 1.5, md: 2 }, textAlign: "center" }}>
+          <Typography
+            variant="h6"
+            mb={1}
+            sx={{ fontSize: { xs: "1rem", md: "1.25rem" } }}
+          >
             Your Balance
           </Typography>
           <Typography
@@ -95,11 +99,17 @@ const Balance = ({ timeout = 1200 }: BalanceProps) => {
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               mb: 1,
+              fontSize: { xs: "1.5rem", sm: "2rem", md: "3rem" },
             }}
           >
             {formattedBalance}
           </Typography>
-          <Typography variant="h6" color="text.secondary" mb={3}>
+          <Typography
+            variant="h6"
+            color="text.secondary"
+            mb={3}
+            sx={{ fontSize: { xs: "0.875rem", md: "1.25rem" } }}
+          >
             {tokenInfo?.symbol}
           </Typography>
           <Button

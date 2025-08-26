@@ -51,10 +51,14 @@ const Mint = ({ timeout = 1600 }: MintProps) => {
           },
         }}
       >
-        <CardContent sx={{ p: 2 }}>
+        <CardContent sx={{ p: { xs: 1.5, md: 2 } }}>
           <Box display="flex" alignItems="center" mb={2}>
             <AddCircleIcon sx={{ mr: 1, color: "#11998e", fontSize: "1rem" }} />
-            <Typography variant="h6" fontWeight={400}>
+            <Typography
+              variant="h6"
+              fontWeight={400}
+              sx={{ fontSize: { xs: "1rem", md: "1.25rem" } }}
+            >
               Mint Tokens
             </Typography>
           </Box>

@@ -40,11 +40,20 @@ const TokenInfo = ({ timeout = 1300 }: TokenInfoProps) => {
         }}
       >
         <CardContent
-          sx={{ p: 2, flex: 1, display: "flex", flexDirection: "column" }}
+          sx={{
+            p: { xs: 1.5, md: 2 },
+            flex: 1,
+            display: "flex",
+            flexDirection: "column",
+          }}
         >
           <Box display="flex" alignItems="center" mb={2}>
             <InfoIcon sx={{ mr: 1, color: "#667eea", fontSize: "1rem" }} />
-            <Typography variant="h6" fontWeight={400}>
+            <Typography
+              variant="h6"
+              fontWeight={400}
+              sx={{ fontSize: { xs: "1rem", md: "1.25rem" } }}
+            >
               Token Information
             </Typography>
           </Box>
