@@ -2,13 +2,21 @@
 
 A **Next.js React application** that demonstrates comprehensive blockchain integration with wallet connection, token management, and event tracking. Built with modern React patterns, TypeScript, and a clean component architecture.
 
-# Screen samples with responsiveness
+## Screen samples with responsiveness
 
 <table>
   <tr>
     <td><img width="1440" height="877" alt="Desktop view" src="https://github.com/user-attachments/assets/efbd0d62-0c87-4ff7-9f7f-22be6871fad3" /></td>
     <td><img width="765" height="877" alt="Tablet view" src="https://github.com/user-attachments/assets/a54c05aa-f2a1-4826-b291-006fdd71790e" /></td>
     <td><img width="423" height="877" alt="Mobile view" src="https://github.com/user-attachments/assets/d8715b13-f1db-4edb-adfe-4b9280852d15" /></td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <img width="1410" height="963" alt="image" src="https://github.com/user-attachments/assets/51a4f949-d7dd-4075-b0e5-81fcee71336e" />
+    <img width="768" height="879" alt="image" src="https://github.com/user-attachments/assets/ffd60fa5-0bae-4abd-9514-499fbe40e6f0" />
+    <img width="422" height="874" alt="image" src="https://github.com/user-attachments/assets/92b09c1c-d8de-4886-932a-020935a64ea0" />
   </tr>
 </table>
 
