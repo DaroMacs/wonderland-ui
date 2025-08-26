@@ -1,25 +1,18 @@
-# Frontend Challenge - Blockchain Integration App
-
-A **Next.js React application** that demonstrates comprehensive blockchain integration with wallet connection, token management, and event tracking. Built with modern React patterns, TypeScript, and a clean component architecture.
-
----
-
 ## ✅ Implemented Features
 
 ### 🔗 Wallet Connection & Network Management
 
 - **Multi-Wallet Support**: Connect with RainbowKit, RabbyKit, or Reown wallets
 - **Network Detection**: Automatic detection of connected network
-- **Chain Switching**: Seamless switching between supported networks (Sepolia, Ethereum mainnet)
-- **Error Handling**: Clear error messages for unsupported networks
+- **Chain Switching**: Seamless switching between supported network: Sepolia
 
-### 💰 Token Management
+### Token Management
 
 - **Balance Display**: Real-time DAI (18 decimals) and USDC (6 decimals) balance fetching
 - **Human-Readable Formatting**: Proper decimal handling for different token standards
 - **Allowance Checking**: Verify token allowances before transfers
 
-### 🔄 Token Operations
+### Token Operations
 
 - **Approve Tokens**: Set spending allowances with amount validation
 - **Transfer Tokens**: Send tokens to any address with balance validation
@@ -27,32 +20,32 @@ A **Next.js React application** that demonstrates comprehensive blockchain integ
 - **Input Validation**: Real-time validation with clear error messages
 - **Loading States**: Visual feedback during blockchain transactions
 
-### 📊 Event Tracking
+### Event Tracking
 
 - **Event Table**: Comprehensive display of transfer and approval events
 - **Event Details**: Token type, amount, sender, recipient, transaction hash
 - **Real-time Updates**: Events refresh automatically after transactions
 - **Transaction Status**: Track pending, successful, and failed transactions
 
-### 🎨 User Experience
+### User Experience
 
-- **Responsive Design**: Mobile-first approach with Tailwind CSS
-- **Modern UI**: Clean interface using Shadcn UI components
+- **Responsive Design**: Mobile-first approach MUI
+- **Modern UI**: Clean interface
 - **Loading States**: Smooth loading indicators for all async operations
 - **Error Handling**: User-friendly error messages and modals
 - **Animations**: Subtle animations for better user experience
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - **Framework**: Next.js 14 with App Router
 - **Language**: TypeScript
-- **Styling**: Tailwind CSS + Shadcn UI
+- **Styling**: MUI
 - **State Management**: React Context (Web3Context, TokenContext)
 - **Blockchain**: Viem + Wagmi
 - **Wallet Integration**: RainbowKit
-- **Testing**: Playwright for E2E tests
+- **Testing**: Unit test with Jest
 - **Code Quality**: ESLint, Prettier
 
 ---
@@ -63,7 +56,7 @@ A **Next.js React application** that demonstrates comprehensive blockchain integ
 
 - Node.js 18+
 - npm or yarn
-- MetaMask or compatible wallet
+- MetaMask
 
 ### Installation
 
@@ -79,28 +72,15 @@ npm install
 npm run dev
 ```
 
-### Environment Setup
-
-Create a `.env.local` file in the root directory:
-
-```env
-NEXT_PUBLIC_SEPOLIA_RPC_URL=https://sepolia.infura.io/v3/YOUR_PROJECT_ID
-NEXT_PUBLIC_MAINNET_RPC_URL=https://mainnet.infura.io/v3/YOUR_PROJECT_ID
-```
-
 ### Running Tests
 
 ```bash
-# Run E2E tests
-npm run test:e2e
-
-# Run tests in UI mode
-npm run test:e2e:ui
-```
+# Run unit tests
+npm test
 
 ---
 
-## 🏗 Architecture & Key Decisions
+## Architecture & Key Decisions
 
 ### State Management
 
@@ -111,15 +91,17 @@ npm run test:e2e:ui
 ### Component Structure
 
 ```
+
 src/
 ├── components/
-│   ├── elements/          # Reusable UI elements
-│   ├── pages/            # Page-specific components
-│   └── ui/               # Shadcn UI components
-├── context/              # React contexts
-├── contracts/            # Contract ABIs and configurations
-├── hooks/                # Custom hooks for token operations
-└── helpers/              # Utility functions
+│ ├── elements/ # Reusable UI elements
+│ ├── pages/ # Page-specific components
+│ └── ui/ # Shadcn UI components
+├── context/ # React contexts
+├── contracts/ # Contract ABIs and configurations
+├── hooks/ # Custom hooks for token operations
+└── helpers/ # Utility functions
+
 ```
 
 ### Key Technical Decisions
@@ -189,84 +171,4 @@ src/
 - **Ethereum Mainnet**: Production network support
 
 ---
-
-## 🧪 Testing
-
-### E2E Test Coverage
-
-- **Wallet Connection Flow**: Tests complete wallet connection process
-- **Network Detection**: Verifies network switching functionality
-- **Token Operations**: Tests approve, transfer, and mint operations
-- **Error Handling**: Validates error scenarios and user feedback
-
-### Running Tests
-
-```bash
-# Run all tests
-npm run test:e2e
-
-# Run specific test file
-npm run test:e2e tests/e2e/app-flow.spec.ts
-
-# Debug tests
-npm run test:e2e:ui
 ```
-
----
-
-## 🚀 Deployment
-
-### Build for Production
-
-```bash
-npm run build
-npm start
-```
-
-### Environment Variables for Production
-
-Ensure all environment variables are properly configured for your deployment platform.
-
----
-
-## 📝 Development Notes
-
-### Key Features Implemented
-
-- ✅ Multi-wallet support with RainbowKit
-- ✅ Automatic network detection and switching
-- ✅ Real-time token balance fetching
-- ✅ Token approval and transfer functionality
-- ✅ Test token minting capability
-- ✅ Comprehensive event tracking and display
-- ✅ Responsive design with modern UI
-- ✅ E2E testing with Playwright
-- ✅ TypeScript for type safety
-- ✅ Error handling and user feedback
-
-### Performance Optimizations
-
-- React Server Components for better initial load
-- Dynamic imports for non-critical components
-- Optimized re-renders with proper state management
-- Efficient event handling and updates
-
----
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests for new functionality
-5. Submit a pull request
-
----
-
-## 📄 License
-
-This project is part of a frontend challenge and is for educational purposes.
-
----
-
-_Built with ❤️ using Next.js, TypeScript, and modern web3 technologies_
