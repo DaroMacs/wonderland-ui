@@ -219,7 +219,7 @@ const EventsTable = () => {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {events.map((event) => renderEventRow(event))}
+                  {events.map((event: TokenEvent) => renderEventRow(event))}
                 </TableBody>
               </Table>
             </TableContainer>

@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { FloatingNavbar } from "@/components/elements/FloatingNavbar";
+import FloatingNavbar from "@/components/elements/FloatingNavbar";
 import Banner from "@/components/pages/Profile/components/Banner";
 import TokenContent from "@/components/pages/Profile/components/TokenContent";
 

@@ -10,7 +10,7 @@ import {
   TokenInfo,
   Transfer,
 } from "./components";
-import { LoadingState } from "@/components/elements/LoadingState";
+import LoadingState from "@/components/elements/LoadingState";
 import { useToken } from "@/context/token";
 
 const TokenContent = () => {
