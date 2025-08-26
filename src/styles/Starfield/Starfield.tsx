@@ -2,14 +2,14 @@
 
 import { useEffect } from "react";
 
-interface Props {
+interface IStarfieldProps {
   speedFactor?: number;
   backgroundColor?: string;
   starColor?: [number, number, number];
   starCount?: number;
 }
 
-const Starfield = (props: Props) => {
+const Starfield = (props: IStarfieldProps) => {
   const {
     speedFactor = 0.05,
     backgroundColor = "black",

@@ -1,9 +1,9 @@
 "use client";
 import { createContext } from "react";
-import { TokenInfo, TransferEvent, ApprovalEvent } from "@/hooks/useDAIToken";
+import { ITokenInfo, TTokenEvent } from "@/interfaces/token";
 
 export type TokenType = "dai" | "usdc";
-export type TokenEvent = TransferEvent | ApprovalEvent;
+export type TokenEvent = TTokenEvent;
 
 export interface ITokenContext {
   // Token selection
@@ -11,7 +11,7 @@ export interface ITokenContext {
   setActiveToken: (token: TokenType) => void;
 
   // Token data
-  tokenInfo: TokenInfo | null;
+  tokenInfo: ITokenInfo | null;
   balance: bigint;
   formattedBalance: string;
   transfer: (to: `0x${string}`, amount: string) => void;

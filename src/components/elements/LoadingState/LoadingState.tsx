@@ -2,11 +2,7 @@
 
 import { Box, CircularProgress, Typography } from "@mui/material";
 
-interface LoadingStateProps {
-  tokenName: string;
-}
-
-export function LoadingState({ tokenName }: LoadingStateProps) {
+const LoadingState = ({ tokenName }: { tokenName: string }) => {
   return (
     <Box
       sx={{
@@ -53,4 +49,6 @@ export function LoadingState({ tokenName }: LoadingStateProps) {
       </Typography>
     </Box>
   );
-}
+};
+
+export default LoadingState;

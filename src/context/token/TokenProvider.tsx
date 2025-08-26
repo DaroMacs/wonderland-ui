@@ -4,11 +4,7 @@ import { TokenContext, TokenType } from "./TokenContext";
 import useDAIToken from "@/hooks/useDAIToken";
 import useUSDCToken from "@/hooks/useUSDCToken";
 
-interface TokenProviderProps {
-  children: ReactNode;
-}
-
-export function TokenProvider({ children }: TokenProviderProps) {
+const TokenProvider = ({ children }: { children: ReactNode }) => {
   const [activeToken, setActiveToken] = useState<TokenType>("dai");
 
   // Use the appropriate hook based on active token
@@ -28,4 +24,6 @@ export function TokenProvider({ children }: TokenProviderProps) {
       {children}
     </TokenContext.Provider>
   );
-}
+};
+
+export default TokenProvider;

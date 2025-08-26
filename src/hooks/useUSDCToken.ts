@@ -10,42 +10,19 @@ import {
   useWriteContract,
 } from "wagmi";
 import { TOKEN_ABI, TOKEN_CONTRACT_ADDRESS } from "@/contracts/USDC/USDC";
-
-export interface TokenInfo {
-  name: string;
-  symbol: string;
-  decimals: number;
-  totalSupply: bigint;
-}
-
-export interface TransferEvent {
-  type: "Transfer";
-  from: Address;
-  to: Address;
-  value: bigint;
-  formattedValue: string;
-  transactionHash: string;
-  blockNumber: bigint;
-}
-
-export interface ApprovalEvent {
-  type: "Approval";
-  owner: Address;
-  spender: Address;
-  value: bigint;
-  formattedValue: string;
-  transactionHash: string;
-  blockNumber: bigint;
-}
-
-export type TokenEvent = TransferEvent | ApprovalEvent;
+import {
+  ITokenInfo,
+  TTokenEvent,
+  ITransferEvent,
+  IApprovalEvent,
+} from "@/interfaces/token";
 
 const useUSDCToken = () => {
   const { address } = useAccount();
   const publicClient = usePublicClient();
-  const [tokenInfo, setTokenInfo] = useState<TokenInfo | null>(null);
+  const [tokenInfo, setTokenInfo] = useState<ITokenInfo | null>(null);
   const [balance, setBalance] = useState<bigint>(0n);
-  const [events, setEvents] = useState<TokenEvent[]>([]);
+  const [events, setEvents] = useState<TTokenEvent[]>([]);
   const [isLoadingEvents, setIsLoadingEvents] = useState(false);
   const [eventsError, setEventsError] = useState<string | null>(null);
   const [allowanceQueries, setAllowanceQueries] = useState<Map<string, bigint>>(
@@ -241,7 +218,7 @@ const useUSDCToken = () => {
       const allTransferLogs = [...transferFromLogs, ...transferToLogs];
       const allApprovalLogs = [...approvalOwnerLogs, ...approvalSpenderLogs];
 
-      const transferEvents: TransferEvent[] = allTransferLogs.map((log) => ({
+      const transferEvents: ITransferEvent[] = allTransferLogs.map((log) => ({
         type: "Transfer",
         from: log.args.from!,
         to: log.args.to!,
@@ -251,7 +228,7 @@ const useUSDCToken = () => {
         blockNumber: log.blockNumber!,
       }));
 
-      const approvalEvents: ApprovalEvent[] = allApprovalLogs.map((log) => ({
+      const approvalEvents: IApprovalEvent[] = allApprovalLogs.map((log) => ({
         type: "Approval",
         owner: log.args.owner!,
         spender: log.args.spender!,
