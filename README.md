@@ -6,6 +6,8 @@ A **Next.js React application** that demonstrates comprehensive blockchain integ
 
 ## Video quick walkthrough
 
+https://www.loom.com/share/24eca369595e41a3b5c9ded3a403d401
+
 ## Screen samples with responsiveness
 
 ### Login screen
