@@ -1,6 +1,16 @@
-## ✅ Implemented Features
+# Frontend Wonderland Challenge
 
-### 🔗 Wallet Connection & Network Management
+A **Next.js React application** that demonstrates comprehensive blockchain integration with wallet connection, token management, and event tracking. Built with modern React patterns, TypeScript, and a clean component architecture.
+
+# Screen samples with responsiveness
+
+<img width="1440" height="877" alt="image" src="https://github.com/user-attachments/assets/efbd0d62-0c87-4ff7-9f7f-22be6871fad3" />
+<img width="765" height="877" alt="image" src="https://github.com/user-attachments/assets/a54c05aa-f2a1-4826-b291-006fdd71790e" />
+<img width="423" height="877" alt="image" src="https://github.com/user-attachments/assets/d8715b13-f1db-4edb-adfe-4b9280852d15" />
+
+## Implemented Features
+
+### Wallet Connection & Network Management
 
 - **Multi-Wallet Support**: Connect with RainbowKit, RabbyKit, or Reown wallets
 - **Network Detection**: Automatic detection of connected network
@@ -114,21 +124,19 @@ src/
 
 ---
 
-## 📱 Usage Guide
+## Usage Guide
 
 ### Connecting Your Wallet
 
 1. Click "Connect Wallet" on the home page
-2. Choose your preferred wallet (RainbowKit, RabbyKit, Reown)
-3. Approve the connection in your wallet
-4. Ensure you're connected to Sepolia testnet
+2. Choose Metamask
+3. Approve the connection in your wallet and accept connect to Sepolia in case you are in another network
 
 ### Managing Tokens
 
 #### Viewing Balances
 
 - Token balances are automatically displayed on the profile page
-- Balances update in real-time after transactions
 
 #### Approving Tokens
 
@@ -152,13 +160,13 @@ src/
 
 ### Viewing Events
 
-- All transfer and approval events are displayed in the events table
+- All transfer and approval events are displayed in the events table click on the icon to refresh
 - Events include transaction hash, amount, sender, and recipient
 - Table updates automatically after new transactions
 
 ---
 
-## 🔧 Contract Information
+## Contract Information
 
 ### Sepolia Testnet Contracts
 
@@ -168,7 +176,6 @@ src/
 ### Supported Networks
 
 - **Sepolia Testnet**: Primary development network
-- **Ethereum Mainnet**: Production network support
 
 ---
 ```
