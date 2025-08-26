@@ -70,6 +70,10 @@ const AllowanceChecker = ({ timeout = 1800 }: AllowanceCheckerProps) => {
         spender: spenderAddress as Address,
       });
       setModalOpen(true);
+
+      // Clear inputs after successful check
+      setOwnerAddress("");
+      setSpenderAddress("");
     } catch (err) {
       setError("Failed to check allowance");
       console.error("Allowance check error:", err);
