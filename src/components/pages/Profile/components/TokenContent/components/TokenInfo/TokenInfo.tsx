@@ -71,7 +71,7 @@ const TokenInfo = ({ timeout = 1300 }: TokenInfoProps) => {
             <Grow in timeout={timeout + 100}>
               <Paper
                 sx={{
-                  p: 1,
+                  p: 1.5,
                   textAlign: "center",
                   bgcolor: alpha("#ffffff", 0.02),
                   border: "1px solid",
@@ -82,7 +82,7 @@ const TokenInfo = ({ timeout = 1300 }: TokenInfoProps) => {
                   flexDirection: "column",
                   justifyContent: "center",
                   height: "100%",
-                  minHeight: 30,
+                  minHeight: 40,
                   overflow: "hidden",
                   "&:hover": {
                     transform: "translateY(-1px)",
@@ -90,6 +90,17 @@ const TokenInfo = ({ timeout = 1300 }: TokenInfoProps) => {
                   },
                 }}
               >
+                <Typography
+                  variant="caption"
+                  sx={{
+                    color: "text.secondary",
+                    fontSize: "0.75rem",
+                    fontWeight: 500,
+                    mb: 0.5,
+                  }}
+                >
+                  Name
+                </Typography>
                 <Typography
                   variant="body2"
                   fontWeight={600}
@@ -101,20 +112,14 @@ const TokenInfo = ({ timeout = 1300 }: TokenInfoProps) => {
                     fontSize: "0.875rem",
                   }}
                 >
-                  <Box
-                    component="span"
-                    sx={{ color: "text.secondary", fontSize: "0.75rem" }}
-                  >
-                    Name:{" "}
-                  </Box>
-                  {tokenInfo?.name}
+                  {tokenInfo?.name || "N/A"}
                 </Typography>
               </Paper>
             </Grow>
             <Grow in timeout={timeout + 200}>
               <Paper
                 sx={{
-                  p: 1,
+                  p: 1.5,
                   textAlign: "center",
                   bgcolor: alpha("#ffffff", 0.02),
                   border: "1px solid",
@@ -125,7 +130,7 @@ const TokenInfo = ({ timeout = 1300 }: TokenInfoProps) => {
                   flexDirection: "column",
                   justifyContent: "center",
                   height: "100%",
-                  minHeight: 30,
+                  minHeight: 40,
                   overflow: "hidden",
                   "&:hover": {
                     transform: "translateY(-1px)",
@@ -133,6 +138,17 @@ const TokenInfo = ({ timeout = 1300 }: TokenInfoProps) => {
                   },
                 }}
               >
+                <Typography
+                  variant="caption"
+                  sx={{
+                    color: "text.secondary",
+                    fontSize: "0.75rem",
+                    fontWeight: 500,
+                    mb: 0.5,
+                  }}
+                >
+                  Symbol
+                </Typography>
                 <Typography
                   variant="body2"
                   fontWeight={600}
@@ -144,20 +160,14 @@ const TokenInfo = ({ timeout = 1300 }: TokenInfoProps) => {
                     fontSize: "0.875rem",
                   }}
                 >
-                  <Box
-                    component="span"
-                    sx={{ color: "text.secondary", fontSize: "0.75rem" }}
-                  >
-                    Symbol:{" "}
-                  </Box>
-                  {tokenInfo?.symbol}
+                  {tokenInfo?.symbol || "N/A"}
                 </Typography>
               </Paper>
             </Grow>
             <Grow in timeout={timeout + 300}>
               <Paper
                 sx={{
-                  p: 1,
+                  p: 1.5,
                   textAlign: "center",
                   bgcolor: alpha("#ffffff", 0.02),
                   border: "1px solid",
@@ -168,7 +178,7 @@ const TokenInfo = ({ timeout = 1300 }: TokenInfoProps) => {
                   flexDirection: "column",
                   justifyContent: "center",
                   height: "100%",
-                  minHeight: 30,
+                  minHeight: 40,
                   overflow: "hidden",
                   "&:hover": {
                     transform: "translateY(-1px)",
@@ -176,6 +186,17 @@ const TokenInfo = ({ timeout = 1300 }: TokenInfoProps) => {
                   },
                 }}
               >
+                <Typography
+                  variant="caption"
+                  sx={{
+                    color: "text.secondary",
+                    fontSize: "0.75rem",
+                    fontWeight: 500,
+                    mb: 0.5,
+                  }}
+                >
+                  Decimals
+                </Typography>
                 <Typography
                   variant="body2"
                   fontWeight={600}
@@ -187,20 +208,14 @@ const TokenInfo = ({ timeout = 1300 }: TokenInfoProps) => {
                     fontSize: "0.875rem",
                   }}
                 >
-                  <Box
-                    component="span"
-                    sx={{ color: "text.secondary", fontSize: "0.75rem" }}
-                  >
-                    Decimals:{" "}
-                  </Box>
-                  {tokenInfo?.decimals.toString()}
+                  {tokenInfo?.decimals?.toString() || "N/A"}
                 </Typography>
               </Paper>
             </Grow>
             <Grow in timeout={timeout + 400}>
               <Paper
                 sx={{
-                  p: 1,
+                  p: 1.5,
                   textAlign: "center",
                   bgcolor: alpha("#ffffff", 0.02),
                   border: "1px solid",
@@ -211,7 +226,7 @@ const TokenInfo = ({ timeout = 1300 }: TokenInfoProps) => {
                   flexDirection: "column",
                   justifyContent: "center",
                   height: "100%",
-                  minHeight: 30,
+                  minHeight: 40,
                   overflow: "hidden",
                   "&:hover": {
                     transform: "translateY(-1px)",
@@ -219,6 +234,17 @@ const TokenInfo = ({ timeout = 1300 }: TokenInfoProps) => {
                   },
                 }}
               >
+                <Typography
+                  variant="caption"
+                  sx={{
+                    color: "text.secondary",
+                    fontSize: "0.75rem",
+                    fontWeight: 500,
+                    mb: 0.5,
+                  }}
+                >
+                  Total Supply
+                </Typography>
                 <Typography
                   variant="body2"
                   fontWeight={600}
@@ -230,13 +256,7 @@ const TokenInfo = ({ timeout = 1300 }: TokenInfoProps) => {
                     fontSize: "0.875rem",
                   }}
                 >
-                  <Box
-                    component="span"
-                    sx={{ color: "text.secondary", fontSize: "0.75rem" }}
-                  >
-                    Total Supply:{" "}
-                  </Box>
-                  {tokenInfo?.totalSupply}
+                  {tokenInfo?.totalSupply || "N/A"}
                 </Typography>
               </Paper>
             </Grow>
