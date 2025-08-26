@@ -1,13 +1,13 @@
 "use client";
 
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import Profile from "@/components/pages/Profile";
 import { LOGIN } from "@/constants/routes";
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
-import { useAccount } from "wagmi";
+import { useWeb3 } from "@/context/web3";
 
-export default function ProfilePage() {
-  const { isConnected } = useAccount();
+const ProfilePage = () => {
+  const { isConnected } = useWeb3();
   const router = useRouter();
 
   useEffect(() => {
@@ -21,4 +21,6 @@ export default function ProfilePage() {
   }
 
   return <Profile />;
-}
+};
+
+export default ProfilePage;

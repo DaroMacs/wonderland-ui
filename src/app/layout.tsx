@@ -1,6 +1,6 @@
-import AppWrapper from "@/components/elements/AppWrapper";
 import { Metadata } from "next";
 import { Roboto } from "next/font/google";
+import AppWrapper from "@/components/elements/AppWrapper";
 
 const roboto = Roboto({
   subsets: ["latin"],

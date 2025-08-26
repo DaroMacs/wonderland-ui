@@ -9,7 +9,7 @@ interface Props {
   starCount?: number;
 }
 
-export default function Starfield(props: Props) {
+const Starfield = (props: Props) => {
   const {
     speedFactor = 0.05,
     backgroundColor = "black",
@@ -159,4 +159,6 @@ export default function Starfield(props: Props) {
       }}
     ></canvas>
   );
-}
+};
+
+export default Starfield;

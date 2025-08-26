@@ -1,17 +1,17 @@
 "use client";
 
-import AnimatedButton from "@/ui/AnimatedButton";
 import {
   AccountBalanceWallet,
   RocketLaunchOutlined,
 } from "@mui/icons-material";
 import { Box, Card, CardContent, Typography } from "@mui/material";
-import { useConnectModal } from "@rainbow-me/rainbowkit";
 import FeaturesList from "../FeaturesList";
 import LogoSection from "../LogoSection";
+import { useWeb3 } from "@/context/web3";
+import AnimatedButton from "@/ui/AnimatedButton";
 
 const LoginForm = () => {
-  const { openConnectModal } = useConnectModal();
+  const { openConnectModal } = useWeb3();
 
   const handleConnectWallet = () => {
     if (openConnectModal) {

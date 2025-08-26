@@ -1,6 +1,8 @@
-import { LOGIN } from "@/constants/routes";
 import { redirect } from "next/navigation";
+import { LOGIN } from "@/constants/routes";
 
-export default function Home() {
+const Home = () => {
   redirect(LOGIN);
-}
+};
+
+export default Home;

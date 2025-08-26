@@ -1,19 +1,32 @@
 "use client";
 
-import { LOGIN } from "@/constants/routes";
-import { Box, Chip } from "@mui/material";
+import {
+  Box,
+  Chip,
+  FormControl,
+  Select,
+  MenuItem,
+  Typography,
+  SelectChangeEvent,
+} from "@mui/material";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useAccount, useDisconnect } from "wagmi";
+import { LOGIN } from "@/constants/routes";
+import { TokenType, useToken } from "@/context/token";
+import { useWeb3 } from "@/context/web3";
 
 export function FloatingNavbar() {
-  const { disconnect } = useDisconnect();
-  const { address } = useAccount();
+  const { address, disconnect } = useWeb3();
+  const { activeToken, setActiveToken } = useToken();
   const router = useRouter();
 
   const handleLogout = () => {
     disconnect();
     router.push(LOGIN);
+  };
+
+  const handleTokenChange = (event: SelectChangeEvent<string>) => {
+    setActiveToken(event.target.value as TokenType);
   };
 
   return (
@@ -48,6 +61,59 @@ export function FloatingNavbar() {
             objectFit: "contain",
           }}
         />
+      </Box>
+
+      <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+        <Typography
+          variant="body2"
+          sx={{
+            color: "rgba(255, 255, 255, 0.8)",
+            fontSize: "0.875rem",
+            fontWeight: 500,
+          }}
+        >
+          Contract:
+        </Typography>
+        <FormControl size="small" sx={{ minWidth: 120 }}>
+          <Select
+            value={activeToken}
+            onChange={handleTokenChange}
+            sx={{
+              color: "#06b6d4",
+              fontSize: "0.875rem",
+              fontWeight: 500,
+              height: "32px",
+              "& .MuiOutlinedInput-root": {
+                height: "32px",
+                borderRadius: "16px",
+                background: "rgba(6, 182, 212, 0.1)",
+                backdropFilter: "blur(10px)",
+              },
+              "& .MuiOutlinedInput-notchedOutline": {
+                borderColor: "rgba(6, 182, 212, 0.6)",
+                borderRadius: "16px",
+              },
+              "&:hover .MuiOutlinedInput-notchedOutline": {
+                borderColor: "#06b6d4",
+              },
+              "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                borderColor: "#06b6d4",
+              },
+              "& .MuiSelect-icon": {
+                color: "#06b6d4",
+              },
+              "& .MuiSelect-select": {
+                padding: "4px 12px",
+                display: "flex",
+                alignItems: "center",
+                height: "24px",
+              },
+            }}
+          >
+            <MenuItem value="dai">DAI</MenuItem>
+            <MenuItem value="usdc">USDC</MenuItem>
+          </Select>
+        </FormControl>
       </Box>
 
       {address && (

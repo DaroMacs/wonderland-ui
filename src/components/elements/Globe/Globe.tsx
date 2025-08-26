@@ -11,7 +11,7 @@ const Globe = () => (
       width: "100vw",
       height: "255px",
       overflow: "hidden",
-      zIndex: 0,
+      zIndex: 10,
       pointerEvents: "none",
       maskImage:
         "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 15%, rgba(0,0,0,1) 60%)",
