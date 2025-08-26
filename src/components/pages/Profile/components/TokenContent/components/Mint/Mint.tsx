@@ -64,9 +64,19 @@ const Mint = ({ timeout = 1600 }: MintProps) => {
               fullWidth
               label="Amount to Mint"
               type="number"
-              placeholder="0.0"
+              placeholder="0"
               value={mintAmount}
-              onChange={(e) => setMintAmount(e.target.value)}
+              onChange={(e) => {
+                const value = e.target.value;
+                // Only allow integers (no decimals)
+                if (value === "" || /^\d+$/.test(value)) {
+                  setMintAmount(value);
+                }
+              }}
+              inputProps={{
+                step: 1,
+                min: 0,
+              }}
               required
               sx={{
                 mb: 3,

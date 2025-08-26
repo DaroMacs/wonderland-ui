@@ -106,9 +106,19 @@ const Approve = ({ timeout = 1700 }: ApproveProps) => {
                 fullWidth
                 label="Amount"
                 type="number"
-                placeholder="0.0"
+                placeholder="0"
                 value={approveAmount}
-                onChange={(e) => setApproveAmount(e.target.value)}
+                onChange={(e) => {
+                  const value = e.target.value;
+                  // Only allow integers (no decimals)
+                  if (value === "" || /^\d+$/.test(value)) {
+                    setApproveAmount(value);
+                  }
+                }}
+                inputProps={{
+                  step: 1,
+                  min: 0,
+                }}
                 required
                 sx={{
                   mb: 3,

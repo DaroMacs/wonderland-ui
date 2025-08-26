@@ -104,9 +104,19 @@ const Transfer = ({ timeout = 1500 }: TransferProps) => {
                 fullWidth
                 label="Amount"
                 type="number"
-                placeholder="0.0"
+                placeholder="0"
                 value={transferAmount}
-                onChange={(e) => setTransferAmount(e.target.value)}
+                onChange={(e) => {
+                  const value = e.target.value;
+                  // Only allow integers (no decimals)
+                  if (value === "" || /^\d+$/.test(value)) {
+                    setTransferAmount(value);
+                  }
+                }}
+                inputProps={{
+                  step: 1,
+                  min: 0,
+                }}
                 required
                 sx={{
                   mb: 3,
