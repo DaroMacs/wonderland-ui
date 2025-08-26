@@ -15,7 +15,7 @@ import { LOGIN } from "@/constants/routes";
 import { TokenType, useToken } from "@/context/token";
 import { useWeb3 } from "@/context/web3";
 
-export function FloatingNavbar() {
+const FloatingNavbar = () => {
   const { address, disconnect } = useWeb3();
   const { activeToken, setActiveToken } = useToken();
   const router = useRouter();
@@ -144,4 +144,6 @@ export function FloatingNavbar() {
       )}
     </Box>
   );
-}
+};
+
+export default FloatingNavbar;
