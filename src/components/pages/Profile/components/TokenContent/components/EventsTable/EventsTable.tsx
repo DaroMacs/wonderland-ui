@@ -21,16 +21,12 @@ import {
   Link,
 } from "@mui/material";
 import { useToken, TokenEvent } from "@/context/token";
+import { formatAddress } from "@/helpers/formatAddress";
 
 const EventsTable = () => {
   const { events, isLoadingEvents, eventsError, refetchEvents } = useToken();
 
-  const formatAddress = (address: string): string => {
-    return `${address.slice(0, 6)}...${address.slice(-4)}`;
-  };
-
   const getExplorerUrl = (transactionHash: string): string => {
-    // Using Etherscan for mainnet - adjust for your network
     return `https://etherscan.io/tx/${transactionHash}`;
   };
 

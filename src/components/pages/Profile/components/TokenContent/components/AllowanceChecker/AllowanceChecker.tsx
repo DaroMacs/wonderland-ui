@@ -24,12 +24,9 @@ import { Address, isAddress } from "viem";
 import { useAccount } from "wagmi";
 import AnimatedButton from "@/components/ui/AnimatedButton";
 import { useToken } from "@/context/token";
+import { formatAddress } from "@/helpers/formatAddress";
 
-interface AllowanceCheckerProps {
-  timeout?: number;
-}
-
-const AllowanceChecker = ({ timeout = 1800 }: AllowanceCheckerProps) => {
+const AllowanceChecker = () => {
   const { address: userAddress } = useAccount();
   const { checkAllowance, getFormattedAllowance } = useToken();
   const [ownerAddress, setOwnerAddress] = useState("");
@@ -88,12 +85,8 @@ const AllowanceChecker = ({ timeout = 1800 }: AllowanceCheckerProps) => {
     }
   };
 
-  const formatAddress = (address: string): string => {
-    return `${address.slice(0, 6)}...${address.slice(-4)}`;
-  };
-
   const component = (
-    <Grow in timeout={timeout}>
+    <Grow in timeout={1800}>
       <Card
         sx={{
           bgcolor: alpha("#ffffff", 0.02),

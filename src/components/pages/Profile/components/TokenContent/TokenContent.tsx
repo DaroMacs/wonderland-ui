@@ -10,14 +10,13 @@ import {
   TokenInfo,
   Transfer,
 } from "./components";
-import { LoadingState } from "./components/LoadingState";
+import { LoadingState } from "@/components/elements/LoadingState";
 import { useToken } from "@/context/token";
 
 const TokenContent = () => {
   const { activeToken, tokenInfo } = useToken();
   const tokenName = activeToken === "dai" ? "DAI" : "USDC";
 
-  // Show loading state while token info is loading
   if (!tokenInfo) {
     return <LoadingState tokenName={tokenName} />;
   }

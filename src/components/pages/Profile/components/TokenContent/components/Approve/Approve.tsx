@@ -17,11 +17,7 @@ import AnimatedButton from "@/components/ui/AnimatedButton";
 import ErrorModal from "@/components/ui/ErrorModal";
 import { useToken } from "@/context/token";
 
-interface ApproveProps {
-  timeout?: number;
-}
-
-const Approve = ({ timeout = 1700 }: ApproveProps) => {
+const Approve = () => {
   const { approve, isApprovePending, balance, parseAmount } = useToken();
   const [spenderAddress, setSpenderAddress] = useState("");
   const [approveAmount, setApproveAmount] = useState("");
@@ -41,7 +37,7 @@ const Approve = ({ timeout = 1700 }: ApproveProps) => {
       setErrorModal({
         open: true,
         title: "Insufficient Balance",
-        message: `You don't have enough tokens to approve ${approveAmount}. Your current balance is insufficient.`,
+        message: `You don't have enough tokens to approve ${approveAmount}. Your current balance is ${balance}.`,
       });
       // Clear the form
       setSpenderAddress("");
@@ -60,7 +56,7 @@ const Approve = ({ timeout = 1700 }: ApproveProps) => {
 
   return (
     <>
-      <Grow in timeout={timeout}>
+      <Grow in timeout={1700}>
         <Card
           sx={{
             bgcolor: alpha("#ffffff", 0.02),

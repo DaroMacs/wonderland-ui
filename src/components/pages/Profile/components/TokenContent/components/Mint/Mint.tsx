@@ -16,11 +16,7 @@ import AnimatedButton from "@/components/ui/AnimatedButton";
 import { useToken } from "@/context/token";
 import { useWeb3 } from "@/context/web3";
 
-interface MintProps {
-  timeout?: number;
-}
-
-const Mint = ({ timeout = 1600 }: MintProps) => {
+const Mint = () => {
   const { address } = useWeb3();
   const { mint, isMintPending } = useToken();
   const [mintAmount, setMintAmount] = useState("");
@@ -34,7 +30,7 @@ const Mint = ({ timeout = 1600 }: MintProps) => {
   };
 
   return (
-    <Grow in timeout={timeout}>
+    <Grow in timeout={1600}>
       <Card
         sx={{
           bgcolor: alpha("#ffffff", 0.02),

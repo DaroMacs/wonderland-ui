@@ -33,11 +33,7 @@ const shimmer = keyframes`
   }
 `;
 
-interface BalanceProps {
-  timeout?: number;
-}
-
-const Balance = ({ timeout = 1200 }: BalanceProps) => {
+const Balance = () => {
   const { tokenInfo, formattedBalance, refetchBalance } = useToken();
   const [isRefreshing, setIsRefreshing] = useState(false);
 
@@ -53,7 +49,7 @@ const Balance = ({ timeout = 1200 }: BalanceProps) => {
   };
 
   return (
-    <Grow in timeout={timeout}>
+    <Grow in timeout={1200}>
       <Card
         sx={{
           bgcolor: alpha("#ffffff", 0.02),

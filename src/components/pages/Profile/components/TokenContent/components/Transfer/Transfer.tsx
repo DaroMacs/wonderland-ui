@@ -17,11 +17,7 @@ import AnimatedButton from "@/components/ui/AnimatedButton";
 import ErrorModal from "@/components/ui/ErrorModal";
 import { useToken } from "@/context/token";
 
-interface TransferProps {
-  timeout?: number;
-}
-
-const Transfer = ({ timeout = 1500 }: TransferProps) => {
+const Transfer = () => {
   const { transfer, isTransferPending, balance, parseAmount } = useToken();
   const [transferTo, setTransferTo] = useState("");
   const [transferAmount, setTransferAmount] = useState("");
@@ -60,7 +56,7 @@ const Transfer = ({ timeout = 1500 }: TransferProps) => {
 
   return (
     <>
-      <Grow in timeout={timeout}>
+      <Grow in timeout={1500}>
         <Card
           sx={{
             bgcolor: alpha("#ffffff", 0.02),

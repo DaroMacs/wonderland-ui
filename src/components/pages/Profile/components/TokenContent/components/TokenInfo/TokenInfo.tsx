@@ -12,12 +12,9 @@ import {
 } from "@mui/material";
 import { useToken } from "@/context/token";
 
-interface TokenInfoProps {
-  timeout?: number;
-}
-
-const TokenInfo = ({ timeout = 1300 }: TokenInfoProps) => {
+const TokenInfo = () => {
   const { tokenInfo } = useToken();
+  const timeout = 1300;
 
   return (
     <Grow in timeout={timeout}>
