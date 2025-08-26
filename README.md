@@ -8,6 +8,8 @@ A **Next.js React application** that demonstrates comprehensive blockchain integ
 
 ## Screen samples with responsiveness
 
+### Login screen
+
 <table>
   <tr>
     <td><img width="1440" height="877" alt="Desktop view" src="https://github.com/user-attachments/assets/efbd0d62-0c87-4ff7-9f7f-22be6871fad3" /></td>
@@ -15,6 +17,8 @@ A **Next.js React application** that demonstrates comprehensive blockchain integ
     <td><img width="423" height="877" alt="Mobile view" src="https://github.com/user-attachments/assets/d8715b13-f1db-4edb-adfe-4b9280852d15" /></td>
   </tr>
 </table>
+
+### Profile
 
 <table>
   <tr>
